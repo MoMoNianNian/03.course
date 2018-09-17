@@ -1,4 +1,4 @@
-shenyg@njrst.com.cn
+﻿shenyg@njrst.com.cn
 版本控制管理工具
   集中式版本控制管理
     CVS SVN
@@ -19,7 +19,9 @@ Linux中 文件夹也叫目录
       白色：文件
       绿色(后缀*)：可执行文件（双击可运行）
       .lnk: 超链接，快捷方式
-      ls -lt：
+      ls -a 显示所有的文件或目录,包括隐藏的
+              Linux系统中,文件的隐藏式通过文件名前面加.实现的
+       ls -lt 以列表形式,按照时间顺序显示非隐藏文件或目录的详细信息
   cd：change directory
       切换工作目录
       cd a 切换到当前目录下的a目录中去
