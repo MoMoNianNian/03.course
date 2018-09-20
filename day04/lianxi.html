@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <script src='../libs/angular.min.js'></script>
+  <style>
+  #d{
+    width:100px;
+    height:20px;
+    border:1px solid red;
+  }
+  
+  .bgc{
+    background: pink;
+  }
+  </style>
+</head>
+<body ng-app='app'>
+  <ul ng-controller="ctrl">
+<li>
+  <input type="checkbox">足球
+  <input type="checkbox" ng-checked="true">篮球
+  <input type="checkbox">排球
+</li>
+
+  <li>
+    <img ng-src="{{path}}" >
+  </li>
+  <li>
+    <select ng-model="val">
+      <option value="1">html</option>
+      <option value="2">css</option>
+      <option value="3">js</option>
+    </select>
+  </li>
+  <li>
+    <ul ng-switch="val">
+        <li ng-switch-when="1">
+          <ul>
+            <li>html初级</li>
+            <li>html中级</li>
+            <li>html高级</li>
+         </ul>
+      </li>
+        <li ng-switch-when="2">
+          <ul>
+            <li>css初级</li>
+            <li>css中级</li>
+            <li>css高级</li>
+         </ul></li>
+        <li ng-switch-when="3">
+          <ul>
+            <li>js初级</li>
+            <li>js中级</li>
+            <li>js高级</li>
+         </ul></li>
+    </ul>
+  </li>
+  <li>
+    {{num}}
+  </li>
+  <li>
+    {{str}}
+  </li>
+  <li>
+    {{obj}}
+  </li>
+  <li>
+    {{arr}}
+  </li>
+  <li ng-repeat = 'arr in arrs track by $index' ng-hide="$index==2">
+    <div id='d' ng-class='{bgc:$index==color}'>{{arr}}</div> 
+</li>
+  
+</ul>
+</body>
+<script>
+  var app = angular.module('app', []);
+  app.controller("ctrl",["$scope",function($scope){
+    $scope.path ="../day03/1.jpeg";
+    $scope.num=12;
+    $scope.str='234';
+    $scope.obj={name:"Alla",age:45};
+    $scope.arrs=[2,'小红','六六',7];
+    $scope.color=1;
+    $scope.isShow = true;
+
+  }])
+</script>
+
+</html>
