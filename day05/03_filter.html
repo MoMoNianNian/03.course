@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <script src='../libs/angular.min.js'></script>
+</head>
+
+<body ng-app='app'>
+  <ul ng-controller="ctrl">
+    <li>
+      uppercase:{{message | uppercase}}
+    </li>
+    <li>
+      lowercase:{{message | lowercase}}
+    </li>
+    <li>
+      date:{{time | date:"yyyy-MM-dd HH:mm:ss"}}
+    </li>
+    <li>
+      currency:{{money | currency}}<br>
+      {{money |currency:"￥"}}
+    </li>
+    <li>
+      {{obj}}<br>
+      json:{{obj | json}}
+
+    </li>
+    <li>
+      {{names}}<br>
+      filter：{{names | filter:"s"}}<hr>
+    </li>
+    <li>
+      limitTo:{{message | limitTo:4}}<br>
+      limitTo:{{message | limitTo:-5}}<br>
+      limitTo:{{names | limitTo:2}}<br>
+      limitTo:{{names | limitTo:-9}}<hr>
+    </li>
+    <li>
+      number:{{num |number}}<br>
+      number:{{num |number:1}}<br>
+      number:{{num |number:-1}}<hr>
+    </li>
+    <li>
+      orderBy:<br>
+      升序：{{nums | orderBy}}<br>
+      降序：{{nums | orderBy:"":true}}<br>
+      升序：{{names | orderBy}}<br>
+      降序：{{names | orderBy:"":true}}<br>
+      升序：{{stus | orderBy:['id','age']}}<br>
+      降序：{{stus | orderBy:'age':true}}<hr>    
+    </li>
+    <li>
+      降序：{{nums | orderBy:"-"}}<br>
+      升序：{{names | orderBy:"+"}}<br>
+      id降序+age升序：{{stus | orderBy:['-id','+age']}}<br>
+      age降序：{{stus | orderBy:'-age'}}<hr>
+    </li>
+    <li ng-repeat='n in names | orderBy'>
+      {{n}}
+    </li>
+  </ul>
+
+</body>
+<script>
+ /*  function Stu(name,age){
+    this.name=name;
+    this.age=age;
+  }
+  var student = new Stu("李四",20) */
+  var app = angular.module('app', []);
+  app.controller("ctrl",["$scope",function($scope){
+    $scope.message = "good good study,day day up";
+    $scope.time = new Date;
+    $scope.money = 25;
+    $scope.obj = new Object();
+    $scope.obj.name = "张三";
+    $scope.obj.age = 34;
+    // $scope.stu = student;
+    $scope.names=["zhangsan","lisi","xiaowang","rousi"]
+    $scope.num=1243.5465;
+    $scope.nums=[4,5,7,3,6,1,8];
+    $scope.stus=[
+      {id:101,name:"mike",age:23},
+      {id:101,name:"jack",age:22},
+      {id:102,name:"kika",age:26},
+      {id:102,name:"lili",age:24},
+      {id:103,name:"cily",age:25}
+      
+    ];
+
+  }])
+</script>
+
+</html>
