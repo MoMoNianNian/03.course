@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <script src='../libs/angular.min.js'></script>
+</head>
+
+<body ng-app='app'>
+    <div ng-controller="ctrl">
+        <div><button ng-click="click()">点击</button></div>
+        <div>随机数:{{num}}</div>
+        
+        
+      </div>
+
+</body>
+<script>
+  var app = angular.module('app', []);
+  app.controller("ctrl",function($scope,$interval){
+    //第一题
+    $scope.num="";
+    $scope.click =function(){
+       
+         
+       var a=0;      
+      var id=$interval(function(){ 
+        a++;
+      $scope.num+= parseInt(Math.random()*100)+1+",";
+      
+      
+     
+    },1000); 
+    console.log($scope.num);
+    $interval.cancel($scope.num);
+          
+   
+    
+    }
+      })
+</script>
+
+</html>
