@@ -24,23 +24,26 @@
     //第一题
     $scope.num="";
     $scope.click =function(){
-       
+      
          
        var a=0;      
       var id=$interval(function(){ 
         a++;
-      $scope.num+= parseInt(Math.random()*100)+1+",";
+      $scope.num+= parseInt(Math.random()*100)+1+" ";
       
-      
+      if(a>4){
+      $interval.cancel(id);
+    }
      
     },1000); 
     console.log($scope.num);
-    $interval.cancel($scope.num);
+    
           
    
     
     }
       })
+     
 </script>
 
 </html>
