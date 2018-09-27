@@ -27,7 +27,7 @@
 					<div class="view">
 						<input class="toggle" type="checkbox" ng-click="finish($index)" ng-checked="false">
 						<label>{{t.msg}}</label>
-						<button class="destroy"ng-click="des(todo,$index)"></button>
+						<button class="destroy" ng-click="des(todo,$index)"></button>
 					</div>
 					<input class="edit" value="Rule the web">
 				</li>
@@ -83,8 +83,9 @@
 		}
 		$scope.des = function(arr,index){
 			//arr:删除的数组,index:删除的下标
-
+		  arr.splice(index,1);
 			$scope.left = $scope.todo.length;
+
 		}
 	});
 </script>
