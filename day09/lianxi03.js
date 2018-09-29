@@ -18,16 +18,23 @@ fs.readdir('./a', function (err, files) {
 
     });
   }*/
- var wenjian="";
- var wenjianjia="";  
-  //递归
+ var wenjian=[];
+ var wenjianjia=[];  
+ //递归
 (function a(i){
   //必须先判定递归结束的条件
 
   if(i==files.length){
-    
-    console.log("文件：" + wenjian);
-    console.log("文件夹：" + wenjianjia);
+    //遍历递归结束，打印最后结果
+    console.log("文件：" )
+    for(k in wenjian){
+      console.log(wenjian[k]);
+    }
+    console.log("文件夹：" )
+    for(k in wenjian){
+      console.log(wenjianjia[k]);
+    }
+   
     
     //当i与数组长度一样，说明遍历结束了
     return;
@@ -44,12 +51,12 @@ fs.readdir('./a', function (err, files) {
     
     if(stats.isFile()){
       
-    wenjian += files[i];
+    wenjian.push(files[i]) ;
    
       
     }else {
       
-      wenjianjia += files[i];
+      wenjianjia.push(files[i]);
     }
     a(++i);   
   });

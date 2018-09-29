@@ -35,13 +35,24 @@ $ npm install -g nodemon 安装自动重启nodejs
 
 fs模块
   1.读取文件，显示
-    06_fs_01.js
-  2.创建文件夹/目录
+    06_fs_01.js   
+     fs.readFile("./day09.txt","utf-8",function(err,data){}
+     var result = fs.readFileSync("./day09.txt");
+  2.创建文件夹/目录 mkdir
     06_fs_02.js
-  3.创建文件
+    fs.mkdir('./a',function(err){}
+    var result = fs.mkdirSync('./a');
+  3.创建文件  ritefile
     06_fs_03.js
-  4.读取文件夹的内容
+    fs.writeFile("./1.txt","aaa",function(err){}
+    var result = fs.writeFileSync("./1.txt","aaa");
+  4.读取文件夹的内容 
     06_fs_04.js 
+    fs.readdir("./",function(err,files){}
+    var result = fs.readdirSync("./");
   5.判断文件的状态
+  fs.stat("./day09.txt",function(err,stats){}
+  var stats = fs.statSync("./day09.txt");
+  stats.isFile();判断是不是文件类型
   练习3：
   读取一个文件夹a，打印出文件中的所有内容

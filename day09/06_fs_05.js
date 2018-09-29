@@ -8,3 +8,5 @@ fs.stat("./day09.txt",function(err,stats){
     console.log(stats.isFile());
   }
 });
+
+var stats = fs.statSync("./day09.txt");
