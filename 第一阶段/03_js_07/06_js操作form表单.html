@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin:0;padding:0;}
+		ui,li{list-style: none;}
+		.list{line-height: 30px;
+			border:1px solid blue;
+			width: 300px;
+			text-indent: 15px;}
+		.list label{display: inline-block;
+			width: 80px;
+		}
+		.list1{
+			margin-top: 20px;
+			border:1px solid red;
+		}
+
+
+	</style>
+</head>
+<body>
+	<!-- 登录表单 -->
+	<form action="" name="login">
+		<ul class="list" >
+			<li><h3>登录</h3></li>
+			<li>
+				<label>用户名</label>
+				<input type="text" name="uname">
+			</li>
+			
+			<li>
+				<label>密码</label>
+				<input type="password" name="upass">
+			</li>
+			
+			<li><label><input type="submit" value="登录"></li>
+		</ul>
+	</form>
+	<!-- 注册表单 -->
+	<form action="" name="register">
+		<ul class="list list1" >
+			<li><h3>注册</h3></li>
+			<li>
+				<label>用户名</label>
+				<input type="text" name="uname">
+			</li>
+			
+			<li>
+				<label>密码</label>
+				<input type="password" name="upass">
+			</li>
+			
+			<li><label><input type="submit" value="注册"></li>
+		</ul>
+	</form>
+
+<script>
+//1)获取表单
+//document.form["formName"]
+console.log(document.forms);//[form,form]	
+console.log(document.forms.length);
+console.log(document.forms["login"]);
+console.log(document.forms["register"]);
+
+//2)获取表单里的控件
+//一个表单里的控件自动组合成一个集合
+
+var uName_elem = document.forms['login']['uname'];
+console.log(uName_elem);
+uName_elem.style.border="1px solid #29B21A";
+
+//注册表单的密码
+var uPass_elem = document.forms['register']['upass'];
+console.log(uPass_elem);
+uPass_elem.style.border="1px solid #EA27D4";
+
+uPass_elem.value="请输入密码";
+</script>
+</body>
+</html>

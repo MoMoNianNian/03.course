@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  .picture{border:1px solid red;
+  width:1200px;height:530px;}
+  .picture img{display:none;}
+  .picture img:first-child{display:block;}
+  .points{border:1px solid blue;}
+  .points span{
+    display:inline-block;
+    width: 20px;height: 20px;
+    border-radius: 20px;
+    border:1px solid green;
+    margin:6px 8px;
+    background: yellow;
+  }
+  
+  </style>
+</head>
+<body>
+<p class="picture">
+<img src="./img/b_5.jpg" alt="">
+<img src="./img/b_4.jpg" alt="">
+<img src="./img/b_3.jpg" alt="">
+<p class="points">
+<span></span>
+<span></span>
+<span></span>
+</p>
+<script>
+  function togglePic(){
+    //实现过程
+    var spans = document.querySelectorAll('.points span');
+    console.log(spans);
+    for(var i=0;i<spans.length;i++){
+      //想办法把i的值传递到函数体里
+      
+      //自调函数：在循环过程中把i的值传递进来
+      (function(index){
+        //index：形参（局部变量），用来接收实参i 
+        function aa(){
+        console.log(index);
+        console.log('函数体切换图片');
+      }
+      //调用
+      spans[i].onclick = aa; 
+      /*spans[i].onclick = function(){
+        console.log(index);
+      }*/ //这也是一种闭包形式
+      //点击调用属于全局，访问局部函数；
+      //局部函数可以访问局部变量index 
+      })(i)
+    
+
+      // spans[i].onclick = function(){
+      //   console.log(this);
+      //   console.log(i);
+      //   //获取到当前对象的下标
+
+      // }
+    }
+  }
+  togglePic();
+
+</script>
+
+
+</p>  
+</body>
+</html>

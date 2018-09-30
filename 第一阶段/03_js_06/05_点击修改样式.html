@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="box"></div>
+	<input type="button" value="红色" onclick="changeColor('red')">	
+	<input type="button" value="绿色"onclick="changeColor('green')">	
+	<input type="button" value="蓝色"onclick="changeColor('blue')">
+<script>
+//需求1：div加一个宽高400*400 黑色边框
+var div_obj = document.getElementById('box');
+console.log(div_obj);
+div_obj.style.width="400px";
+div_obj.style.height="400px";
+div_obj.style.border="1px solid black";
+
+//需求2：点击按钮，切换div对应的背景色
+function changeColor(color){
+	div_obj.style.background=color;
+}
+
+
+
+
+</script>	
+</body>
+</html>

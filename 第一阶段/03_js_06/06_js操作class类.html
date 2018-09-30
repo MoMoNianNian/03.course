@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.box1{
+		width: 400px;
+		height: 200px;
+		border: 1px solid red;
+	}	
+	.box2{
+		width: 500px;
+		height: 180px;
+		border: 2px dashed green;
+	}	
+	.box3{
+		background-color: pink;
+	}
+
+	</style>
+</head>
+<body>
+	<div class="box1"></div>
+	<input type="button" value="修改样式" onclick="btn1()">
+	<input type="button" value="添加背景色" onclick="btn2()">
+	<input type="button" value="移除样式" onclick="btn3()">
+	<script>		
+	var div_obj = document.querySelector('div');
+	console.log(div_obj);
+	//1)单击按钮1：修改样式 box2	
+	function btn1(){
+		div_obj.className +=' box2';
+	}
+	//2)单击按钮2：添加样式 box3	
+	function btn2(){
+	//class类名的数组集合
+		console.log(div_obj.classList);
+		//往数组集合里添加“新类名”
+		div_obj.classList.add('box3');
+	}
+	//3）单击按钮3：移除某一个样式
+	function btn3(){
+		div_obj.classList.remove('box3');
+	}
+	</script>
+</body>
+</html>

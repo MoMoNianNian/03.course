@@ -1,0 +1,108 @@
+第三章 Js
+第八节
+一.日期对象
+<script>
+	//1) 日期对象: Date
+	var today = new Date();
+	console.log(today);
+	//Tue Aug 21 2018 14:08:19 GMT+0800 (中国标准时间)
+	//声明一个指定日期的时间对象
+	var date1 = new Date('2018/10/11 14:12:15');
+	console.log(date1);
+	//Thu Oct 11 2018 14:12:15 GMT+0800 (中国标准时间)
+	//2) 日期对象:提供的API方法
+	//1.获取年份
+	var year = today.getFullYear();
+	console.log(year);//2018
+	//2.获取月份
+	var month = today.getMonth();
+	console.log(month);//7:月份的下标 (1-12) 
+	//3.获取日
+	var day = today.getDate();
+	console.log(day);//21
+	//4.获取星期
+	var week = today.getDay();
+	console.log(week);//2--星期2  
+	var arr = ['日','一','二','三','四','五','六'];
+		//	0	1   2    3    4    5    6		
+	week = arr[week];
+
+	//5.获取时
+	var H = today.getHours();
+	H<10? H = "0"+H:H;
+	console.log(H);
+	//6.获取分
+	var M = today.getMinutes();
+	M<10? M = "0"+M:M;
+	console.log(M);
+	//7.获取秒
+	var S = today.getSeconds();
+	S<10? S = "0"+S:S;
+	console.log(S);
+</script>
+<script>
+	//8.方法:getTime()
+	// 当前距离1970年1月1日 有多少毫秒
+	var time = new Date().getTime();
+	console.log(time);
+	//2018/11/11距离1970年1月1日 有多少毫秒
+	var endTime = new Date("2018/11/11").getTime();
+	console.log(endTime);
+	//差值 今天距离双11有多少毫秒? 
+	var offTime = endTime-time;
+	console.log(offTime);
+</script>
+
+二.计时器
+	 作用:间隔多久去做什么事情
+	 <script>
+	 	// 1)设置计时器
+	 	// 无限循环
+		setInterval(函数名,间隔时间);
+		// 只执行一次
+		setTimeout(函数名,延迟时间);
+		// 给计时器命名
+		var t1 = setInterval(函数名,间隔时间);
+		var t2 = setTimeout(函数名,延迟时间);
+		// 2) 清除计时器
+		clearInterval(t1/t2);
+		clearTimeout(t1/t2);
+	 </script>
+三.数学函数(部分API方法):Math对象
+	<script>
+	// 1)四舍五入
+	Math.round(数值);
+	// 2)取整(向上)
+	Math.ceil(数值);
+	// 3)取整(向下)
+	Math.floor(数值);
+	// 4)取最大值
+	Math.max(数值1,数值2,数值3...)
+	// 5)取最小值
+	Math.min(数值1,数值2,数值3...)
+	// 6)幂运算 x的y次方
+	Math.pow(x,y)
+	// 7)随机数 0-1之间的随机小数
+	Math.random();
+	</script>
+
+课下练习:
+	1) 计算今天距离双11有多少天几时几分几秒?
+	 附加功能:动态显示
+
+	2) 5秒倒计时跳转页面
+	效果如下:
+		5秒之后跳转到XX页
+	<script>
+	//如何跳转页面
+	window.location = "http://www.baidu.com";
+	</script>
+	3) 写一个函数:
+	可以获取min和max之间的随机整数
+	50 - 70
+	30 - 80
+	10 - 50
+
+
+		
+

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.menu{
+		width: 500px;
+		height: 100px;
+		border:1px solid red;
+	}
+	.menu a{
+		width:64px;
+		height: 64px;
+		display: inline-block;
+		border:1px solid blue; 
+		/* 合并样式
+		background: 图片url repeat left top */
+		background: url(img/login_icons_small.svg);
+	}
+	
+
+	.menu .qq{
+		background-position:-80px 0; 
+	}
+	.menu .douban{
+		background-position:-160px 0; 
+	}
+	.menu .renren{
+		background-position:-240px 0; 
+	}
+	.menu .wechat{
+		background-position:-320px 0; 
+	}
+	/* 鼠标经过,原位置垂直上移80px */
+	.menu .sina:hover{
+		background-position:0 -80px; 
+	}
+	.menu .qq:hover{
+		background-position:-80px -80px; 
+	}
+	.menu .douban:hover{
+		background-position:-160px -80px; 
+	}
+	.menu .renren:hover{
+		background-position:-240px -80px; 
+	}
+	.menu .wechat:hover{
+		background-position:-320px -80px; 
+	}
+
+
+	</style>
+</head>
+<body>
+	<div class="menu">
+		<a href="#" class="sina"></a>
+		<a href="#" class="qq"></a>
+		<a href="#" class="douban"></a>
+		<a href="#" class="renren"></a>
+		<a href="#" class="wechat"></a>
+		
+		
+	</div>
+</body>
+</html>

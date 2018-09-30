@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{margin:0;padding:0;}
+	.imgBox{
+		border:1px solid red;
+		width: 700px;
+		position: relative;
+	}
+	.imgBox .imgs img{width: 700px;display: none;}
+	.imgBox .imgs img.current{display: block}
+	
+	.btns span{
+		display: block;
+		width: 70px;
+		height: 60px;
+		/* border:1px solid blue; */
+		position: absolute;
+		top: 50%;
+		margin-top: -30px;
+		font-size: 40px;
+		font-weight: bold;
+		text-align: center;
+		line-height: 60px;
+		color: white;
+		background: rgba(0,0,0,0.5);
+	}
+	.btns span.prev{
+		left: 0;
+	}
+	.btns span.next{
+		right: 0;
+	}
+	.points{
+		position: absolute;
+		left: 0;
+		width: 100%;
+		bottom: 10px;
+		text-align: center;
+	}
+	.points span{
+		width: 16px;height: 16px;
+		background: #efefef;
+		display: inline-block;
+		margin:0 4px;
+	}
+	.points span.current{
+		background: blue;
+	}
+	</style>
+</head>
+<body>
+	<div class="imgBox">
+		<div class="imgs">
+			<img src="img/b_1.jpg" class="current" >
+			<img src="img/b_2.jpg" >
+			<img src="img/b_3.jpg" >
+			<img src="img/b_4.jpg" >
+			<img src="img/b_5.jpg">
+		</div>
+		<div class="btns">
+			<span class="prev"><</span>
+			<span class="next">></span>
+		</div>
+		<div class="points">
+			<span class="current"></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+
+	</div>
+	<script>
+		var num = 0;//记录当前图片的下标
+		document.title = num;
+		var imgs_obj=document.querySelectorAll(".imgs img");
+		console.log(imgs_obj);
+		var squares_obj=document.querySelectorAll(".points span");
+		console.log(squares_obj);
+		//1)单击右按钮：
+		/*
+		点击之前是第几张图：下一张是谁？num++
+		 */
+		var next_btn = document.querySelector(".btns .next");
+		console.log(next_btn);
+		next_btn.onclick=function(){
+			//num++:下一张图的下标
+				 //如果下标<4,才允许加1
+				 num<4?num++:num=0;
+				 /*if(num<4){
+				 	num++;//num加1
+				 }else{//大于等于4，归置为0
+				 	num=0;
+
+				 }*/
+				 showImg(num);
+				 showSquare(num);
+				 }
+		//2)单击左按钮：
+		/*
+		点击之前是第几张图：上一张是谁？num--
+
+		 */
+		var prev_btn = document.querySelector(".btns .prev");
+		console.log(prev_btn);
+		prev_btn.onclick=function(){
+			
+			//如果下标>0,才允许-1，否则归置为4
+			 num>0?num--:num=4;
+					/*if(num>0){
+				 	num--;
+				 }else{
+				 	num=4;
+
+				 }*/
+				  showImg(num);
+				  showSquare(num);
+
+		}
+
+//定义一个函数：切换图显示
+function showImg(){
+	//1)隐藏所有图
+	for(var i=0;i<imgs_obj.length;i++){
+				imgs_obj[i].classList.remove("current");
+			}imgs_obj[num].classList.add("current");
+
+	}	
+//定义一个函数：切换矩形块
+function showSquare(index){
+	//1)清楚所有矩形块的current类
+	for(var i=0;i<squares_obj.length;i++){
+		squares_obj[i].classList.remove("current");
+
+	}
+	//2）给对应的矩形块添加current类
+	squares_obj[index].classList.add("current");
+}
+
+
+
+</script>
+</body>
+</html>

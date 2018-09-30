@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.box{
+		width:600px;
+		border:3px solid blue;
+	}
+	
+	/* 在内部:起始位置添加内容 */
+	.box:before{
+		content: "杜甫";
+		font-size: 30px;
+		color: red;
+	}
+	
+	/* 在内部:末端位置添加内容 */
+	.box:after{
+		content:url(img/ic1.gif);
+		font-size: 30px;
+		color: #1FA12F;
+	}
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		国破山河在，城春草木深。感时花溅泪，恨别鸟惊心。烽火连三月，家书抵万金。白头搔更短，浑欲不胜簪。国破山河在，城春草木深。感时花溅泪，恨别鸟惊心。烽火连三月，家书抵万金。白头搔更短，浑欲不胜簪。
+	</div>
+</body>
+</html>

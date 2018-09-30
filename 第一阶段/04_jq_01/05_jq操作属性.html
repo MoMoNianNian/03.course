@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jq/jquery-1.9.1.min.js"></script>
+	<script>
+	//需求：给li添加一个属性title 导航文字1-5
+	$(function(){
+		for(var i=0;i<$(".list li").length;i++){
+			$(".list li").eq(i).attr('title', '导航文字'+(i+1));
+		}
+				
+
+			});
+
+
+	
+
+	</script>
+</head>
+<body>
+	<ul class="list">
+		<li><a href="#">音乐</a></li>
+		<li><a href="#">学习</a></li>
+		<li><a href="#">舞蹈</a></li>
+		<li><a href="#">唱歌</a></li>
+		<li><a href="#">体育</a></li>
+	</ul>	
+</body>
+</html>

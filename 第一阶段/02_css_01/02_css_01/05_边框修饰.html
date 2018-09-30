@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	/* 标签选择器{} */
+	body{
+		border-width: 1px;
+		border-color: green;
+		border-style: solid;
+	}
+	h1{
+		border-width: 3px;
+		border-color: blue;
+		border-style: solid;
+		height: 80px;
+		width: 50%;
+
+		border-top-width:4px;
+		border-top-color:purple;
+		
+		/* 合并方式 (值没有先后顺序)
+		 边框:大小 颜色 类型;
+		*/
+		border-top: 3px solid orange;
+		border-bottom: solid red 4px;
+		border-left: 4px #4576DE solid;
+		border-right: 5px #E56339 solid;
+	
+		border:1px solid blue;	
+	}
+	h2{
+		height: 30px;
+		border:8px solid red;
+	}
+
+	</style>
+</head>
+<body>
+	<p style="
+	border-width:2px;
+	border-color:red;
+	border-style:solid;
+	width:600px;
+	height:100px;">aa</p>
+	<h1></h1>
+	<h1></h1>
+
+	<h2 style="border-style:solid;">solid实线</h2>
+	<h2 style="border-style:dashed;">dashed短虚线</h2>
+	<h2 style="border-style:dotted;">dotted点虚线</h2>
+	<h2 style="border-style:double;">double双边框</h2>
+	<h2 style="border-style:groove;">groove凹槽</h2>
+	<h2 style="border-style:ridge;">ridge凸槽</h2>
+	<h2 style="border-style:none;">none</h2>
+
+
+
+
+	<br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br>
+</body>
+</html>

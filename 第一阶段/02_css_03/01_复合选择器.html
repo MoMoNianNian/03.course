@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.box1{
+		width: 500px;height: 40px;
+		border:1px solid red;		
+	}
+	.box2{
+		width: 600px;height: 60px;
+		border:1px dashed blue;		
+	}
+	/* 并集选择器 */
+	.box1,.box2{
+		font-size: 24px;
+		color: #DB1FD5;
+		text-align: center;
+		text-decoration: underline;
+	}
+
+	.box3{
+		width: 400px;height: 40px;
+		border:1px solid green;
+	}
+	.box3 a{
+		color: #535050;
+		text-decoration: none;
+		font-size: 18px;
+	}/*11*/
+
+	/* 交集选择器 */
+	.box3 a.one{
+		color: red;
+		font-weight:bold;
+	}/*20*/
+
+
+	</style>
+</head>
+<body>
+	<div class="box1">
+		春望
+	</div>
+	<div class="box2">
+		桃花源记
+	</div>
+	<div class="box3">
+		<a href="#" class="one">百度</a>
+		<a href="#">腾讯</a>
+		<a href="#">淘宝</a>
+		<a href="#">京东</a>
+	</div>
+
+</body>
+</html>

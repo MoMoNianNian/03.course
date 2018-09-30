@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.box1,.box2,.box3{
+		margin:10px 0;
+	}
+	.box1{
+		border:2px solid red;
+	}
+	.box2{
+		border:2px solid blue;
+	}
+	.box3{
+		border:2px solid green;
+	}
+	/* 方法1:display;  不占位置*/
+	.box1 img:last-child{
+		 display: none; 
+	}
+	/* 方法2:visibility; 占位置*/
+	.box2 img:last-child{
+		 visibility: hidden; 
+	}
+	/* 方法3:opacity; 占位置*/
+	.box3 img:last-child{
+		opacity:.5;
+	}
+
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<img src="img/5.jpg" height="100" alt=""><br>
+		<img src="img/8.jpg" height="100" alt="">
+	</div>
+	<div class="box2">
+		<img src="img/5.jpg" height="100" alt=""><br>
+		<img src="img/8.jpg" height="100" alt="">
+	</div>
+	<div class="box3">
+		<img src="img/5.jpg" height="100" alt=""><br>
+		<img src="img/8.jpg" height="100" alt="">
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+//函数1：求两个数值的和
+function getRs(num1,num2){
+  console.log(num1+num2);
+}
+//函数2：求三个数值的乘积
+function getRs(num1,num2,num3){
+  console.log(num1*num2*num3);
+}
+
+getRs(10,45);//NaN
+
+//等同于一下结构
+ var getRs=function(num1,num2){
+  console.log(num1+num2);
+} 
+  getRs=function(num1,num2,num3){
+  console.log(num1*num2*num3);
+}
+
+</script>  
+</body>
+</html>

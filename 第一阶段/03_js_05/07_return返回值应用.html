@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+//验证用户名函数、
+//1）不能为空
+//2）不能超过10个字符
+//3）不能包含特殊符号＠
+//提示信息位置可以自己随意指定
+
+
+function fun(name){
+   if(name==""){
+   	 	return "用户名不能为空";
+   	 }else if(name.length>10){
+   	  	return "用户名不能超过10个字符";
+   	 }else if(name.indexOf('@')!=-1){
+   	  	return "用户名不能包含特殊符号@";
+   	 }return "用户名可以使用";
+   }
+//调用函数就可以拿到返回值
+//用户1：打印在页面上
+document.write(fun(""));
+//用户2：控制台里显示
+console.log(fun("146464541454"));
+
+document.write(fun("1@4"));
+document.write(fun("25"));
+
+
+
+
+
+</script>	
+</body>
+</html>

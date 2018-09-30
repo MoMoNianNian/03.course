@@ -1,0 +1,26 @@
+2018-09-11 09:54:36
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="box1" style="width:400px;height:400px;border:1px solid red;"></div>
+  <script>
+    box1.onclick = function(){
+      //结论：事件对象：
+      //  arguments[0] == event;
+      // e == event  ==  arguments[0];   
+
+      // console.log(event);
+      // console.log(event.srcElement);
+      console.log(arguments[0]);
+      console.log(arguments[0].srcElement);
+    }
+  </script>
+</body>
+</html>

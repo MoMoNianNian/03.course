@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.p1{
+		border:1px solid red;
+	}
+	.p1 a{
+		text-decoration: none;
+	}
+	.p1>a{
+		color:orange;
+	}
+	/* 属性选择器 */
+	form[name=register]{
+		border:1px solid blue;
+	}
+	input[name=uname]{
+		border:2px dashed #C526EB;
+	}
+	input[name=unick]{
+		border:2px double #1E9810;
+	}
+	input[type=text]{
+		background: #EDF9A8;
+	}
+
+	</style>
+</head>
+<body>
+	<div class="p1">
+		<a href="#">江苏省</a>
+		<ul>
+			<li><a href="#">南京市</a></li>
+			<li><a href="#">无锡市</a></li>
+			<li><a href="#">苏州市</a></li>
+		</ul>
+	</div>
+	<div>
+		<form name="register" action="">
+		<input type="text" name="uname"><br>
+		<input type="text" name="unick"><br>
+		<input type="password" name="upass"><br>
+		<input type="submit" value="注册">
+		</form>
+	</div>
+
+
+</body>
+</html>

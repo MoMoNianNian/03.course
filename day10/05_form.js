@@ -1,5 +1,6 @@
 var http = require('http');
 var fs = require('fs');
+var qs = require('querystring');
 
 var server = http.createServer(function (req, res) {
   if (req.url == '/favicon.ico') {
@@ -33,6 +34,9 @@ var server = http.createServer(function (req, res) {
    req.on("end",function(){
     //进入接收完场状态，说明数据接收完毕
     console.log(allData);
+    //将字符串的参数，通过querystring模块转换为对象类型
+    var obj=qs.parse(allData);
+    console.log(obj);
     res.end();//返回响应
   });
   }

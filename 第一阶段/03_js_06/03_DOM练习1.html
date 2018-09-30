@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			border: 1px solid red;
+			width: 840px;
+		}
+		.autow{
+			margin: 20px auto;
+		}
+	</style> -->
+</head>
+<body>
+<div class="box">
+	<img src="img/5.jpg" alt="">
+	<img src="img/8.jpg" alt="">
+	<img src="img/9.jpg" alt="">
+	<img src="img/10.jpg" alt="">
+</div>
+<script>
+	//需求1：用js修改图片的大小 宽200 高150
+	var img_obj=document.querySelectorAll('.box img');
+	console.log(img_obj);
+	//数组里的元素 img才可以修改宽高属性
+	
+	for(key in img_obj){
+		//图片 img_obj[key]
+		img_obj[key].width =200;
+		img_obj[key].height =150;
+	}
+
+	//需求2：把autow里的样式添加给div盒子
+	var div_obj = document.getElementsByClassName('box');
+	console.log(div_obj[0]);
+	div_obj[0].className +=' autow';
+
+
+</script>	
+</body>
+</html>

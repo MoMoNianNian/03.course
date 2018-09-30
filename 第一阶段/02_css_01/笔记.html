@@ -1,0 +1,138 @@
+第二章 CSS
+第一节
+一、html标签
+	1. <span></span>
+	2. <label></label>
+	*特性
+		1)没有修饰
+		2)在一行显示,不会换行
+	3. 内嵌页面iframe
+		<iframe src="02_百度.html" frameborder="1" width="800" scrolling="auto"></iframe>
+		*属性
+		1)frameborder="0/1" 边框:无/有
+		2)scrolling="auto/yes/no" 滚动条状态
+二、CSS
+	1.认识CSS
+	英文全称:Cascading Style Sheets
+	中文:层叠样式表
+	<link rel="stylesheet" href="">
+	2.css作用是什么?
+	html:标签元素 （素颜）
+	css:修饰标签,美化标签（美图秀秀）
+	3.怎么使用css?
+		1)语法:
+			样式名:样式值;样式名:样式值;
+		2)使用位置
+			A:标签行里(行内样式)	作用于"当前标签"
+			<p style="样式名:样式值;样式名:样式值;"></p>	
+			B:内联样式 作用于"当前页面"
+			<head>
+				<style>
+					选择器{样式名:样式值;样式名:样式值;}
+					p{样式名:样式值;样式名:样式值;}
+				</style>
+			</head>
+			<body>
+				<p></p>
+			</body>
+			C:外联样式	作用于"当前项目"
+			index.css文件
+				p{样式名:样式值;样式名:样式值;}
+
+			<head>
+				<link rel="stylesheet" href="index.css">
+			</head>
+			<body>
+				<p></p>
+			</body>	
+三、css修饰样式:border边框
+	1)border-width:1px;	边框大小
+	2)border-color:red/#ff0000/rgb(255,0,0);边框颜色
+	3)border-style:solid;边框类型:实线
+		1. solid--实线
+		2. dashed--短虚线
+		3. dotted--点虚线
+		4. double--双边框
+		5. groove--凹槽
+		6. ridge--凸槽
+		7. none--无
+	4)合并方式
+		border-top/bottom/left/right:1px solid red;
+		border:1px solid red;
+	5)实现边框颜色透明:transparent
+	p{
+		width: 0px;height: 0px;
+		border-top: 20px solid red;
+		border-bottom: 20px solid transparent;
+		border-left: 20px solid transparent;
+		border-right: 20px solid transparent;
+	}
+四、css样式:背景
+	1.背景色
+		background-color:red/#ff0000/rgb(255,0,0);
+	2.背景图
+		background-image:url(图地址);
+	3.背景图平铺方式
+		background-repeat:repeat;	默认平铺
+		background-repeat:repeat-x;水平平铺
+		background-repeat:repeat-y;垂直平铺
+		background-repeat:no-repeat;不平铺
+	4.背景图位置
+		background-position:水平方向 垂直方向;
+		水平方向:left/center/right/(+/-数值)
+		垂直方向:top/center/bottom/(+/-数值)
+		-------------------
+		0,0点在标签的左上角
+		-------------------
+	5.合并方式
+		background:green;
+		background:url("img/timg (8).jpeg") no-repeat -100px 100px;
+		background:yellow url("img/timg (8).jpeg") 
+		no-repeat center bottom;
+	6.固定背景图
+		background-attachment: fixed;
+五、css样式：文本修饰
+		1. font-size: 30px;	文字大小
+		2. font-family: "微软雅黑"; 字体类型
+		3. color: blue; 文本颜色
+		4. font-weight:normal;/*文本加粗:正常; */
+			 font-weight:bold;	/*文本加粗:文本加粗;*/
+		5. font-style: italic;/*文本样式:倾斜;*/
+			 font-style: normal;/*文本样式:正常;*/
+		6. text-align:left/center/right;水平对齐
+		7. text-decoration:underline; 下划线
+		   text-decoration:overline; 上划线
+		   text-decoration:line-through; 删除线
+		   text-decoration:none; 无
+		8. text-indent:30px/2em; 首行缩进
+		9. line-height:30px;	行高
+			 单行文本:
+			 line-height = height;可实现垂直居中
+六、css样式:列表符号
+	1. 列表符号类型
+	list-style-type:circle/square/disc/none/upper-alpha;
+	2. 列表符号为图片
+	list-style-image:url(图片地址);
+	3. 列表符号位置(参照物:li)
+	list-style-position:inside/outside;
+	4.合并方式:
+	list-style:circle inside;
+	list-style:url(图片地址) inside;
+
+课下练习:
+	
+预习:
+	W3school离线手册->css->css基础教程
+	css选择器
+	
+
+
+
+
+
+
+
+
+
+
+

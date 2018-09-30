@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+//1)日期对象：Date
+var today = new Date();
+console.log(today);
+//Tue Aug 21 2018 14:08:58 GMT+0800 (中国标准时间)	
+// 声明一个指定时间日期的时间对象
+var date1 = new Date('2018/08/11 14:15:11');
+console.log(date1);
+//Sat Aug 11 2018 14:15:11 GMT+0800 (中国标准时间)
+
+//2) 日期对象：提供API方法
+//1.获取年份
+var year = today.getFullYear();
+console.log(year);//2018
+//2.获取月份
+var month = today.getMonth();
+console.log(month);//7：月份的下标 (1-12)
+//3.获取日
+var day = today.getDate();
+console.log(day);//21
+//4.获取星期数
+var week = today.getDay();
+console.log(week);//2-----星期2
+//5.获取时
+var H = today.getHours();
+console.log(H);//21
+H<10?H='0'+H:H;
+//6.获取分
+var M = today.getMinutes();
+console.log(M);//21
+M<10?M='0'+M:M;
+//7.获取秒
+var S = today.getSeconds();
+console.log(S);//21
+S<10?S='0'+S:S;
+//显示在页面上
+//2018年8月21日 星期二 14:31:09
+var W=['日','一','二','三','四','五','六'];
+week=W[week];
+
+document.write(year+'年'+(month+1)+'月'+day+'日'+' 星期'+week+' '+H+':'+M+':'+S);
+
+//方法：getTime()
+//  当前距离1970年1月1日 有多少毫秒
+var time = new Date().getTime();
+console.log(time); 
+//2018/11/11距离1970年1月1日 有多少毫秒
+var endTime = new Date("2018/11/11").getTime();
+console.log(endTime);
+
+//差值 今天距离双11有多少毫秒
+var offTime=endTime-time;
+console.log(offTime); 
+
+var D=Math.floor(offTime/1000/60/60/24);
+console.log(D);
+
+var H=Math.floor((offTime-(D*24*3600*1000))/1000/3600);  
+console.log(H);
+
+var M=Math.floor((offTime-(D*24*3600*1000)-(H*3600*1000))/1000/60)
+console.log(M);
+
+
+/*getToday()
+setInterval(getToday, 1000);*/
+
+
+</script>	
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<video id='video1' src="images/oceans-clip.mp4" controls width=100% 
+	poster="images/oceans-clip.png"></video>
+	
+	<!-- 自定义组件 -->
+	<div class="group">
+		<input type="button" value="播放" name="btn1">
+		<input type="button" value="暂停" name="btn2">
+		<input type="button" value="静音" name="btn3">
+		<input type="button" value="加速" name="btn4">
+		<input type="button" value="减速" name="btn5">
+		<input type="button" value="前进5秒" name="btn6">
+		<input type="button" value="后退5秒" name="btn7">
+		
+	</div>
+
+	<!-- 用js控制按钮的事件 -->
+	<script>
+	//获取相关的DOM元素
+	var video_obj=document.querySelector('#video1');
+	var btn1 = document.querySelector('input[name=btn1]');
+	var btn2 = document.querySelector('input[name=btn2]');
+	var btn3 = document.querySelector('input[name=btn3]');
+	var btn4 = document.querySelector('input[name=btn4]');
+	var btn5 = document.querySelector('input[name=btn5]');
+	var btn6 = document.querySelector('input[name=btn6]');
+	var btn7 = document.querySelector('input[name=btn7]');
+	//添加事件操作
+	//1)播放按钮
+	btn1.onclick = function(){
+		video_obj.play();
+	}
+	//2)暂停按钮
+	btn2.onclick = function(){
+		video_obj.pause();
+	}
+	//3) 静音按钮
+	//点击静音，再点击取消静音
+	btn3.onclick = function(){
+		console.log(video_obj.muted);//false
+
+		video_obj.muted=!video_obj.muted;
+		console.log(video_obj.muted);//true
+		video_obj.muted?btn3.value = "取消静音":btn3.value = "静音";
+		}
+	//4)加速按钮 速度属性：playbackRate	
+	btn4.onclick = function(){
+		console.log(video_obj.playbackRate);
+		video_obj.playbackRate += 0.2;
+	}
+	//5)减速按钮 速度属性：playbackRate	
+	btn5.onclick = function(){
+		console.log(video_obj.playbackRate);
+		video_obj.playbackRate -= 0.2;
+	}
+	//6）前进按钮 当前视频位置属性：currentTime
+	btn6.onclick = function(){
+		video_obj.currentTime +=5;
+	}
+	//7）后退按钮 当前视频位置属性：currentTime
+	btn7.onclick = function(){
+		video_obj.currentTime -=5;
+	}
+	</script>
+</body>
+</html>

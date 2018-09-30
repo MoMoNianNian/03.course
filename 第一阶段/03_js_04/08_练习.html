@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.p1{
+			width: 200px;
+			border: 1px red solid;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+<script>
+
+//1）九九乘法口诀表
+
+for(i=1;i<=9;i++){
+	for(n=1;n<=i;n++){
+		document.write(n+'*'+i+'='+n*i+"      ");
+	}document.write('<br>');
+}
+//2）拓展：倒金字塔
+var rows=prompt("请输入金字塔层数");
+
+document.write('<p class="p1">');
+for(var n=rows;n>=1;n--){  //循环行数
+	for(var m=1;m<=n*2-1;m++){ //循环*个数
+		document.write('*');
+	}document.write('<br>');
+}
+document.write('</p>');
+//3）百钱买百鸡：100元买100只鸡
+//公鸡5元一只，母鸡3元一只，小计1元3只，
+//问能买公鸡，小鸡，母鸡各多少只？几种买法?	
+for(var a=0,i=0;i<=20;i++){
+	for(var m=0;m<=33;m++){
+		for(var n=0;n<=100;n++){
+			if(5*i+3*m+n/3==100 && i+m+n==100){
+				document.write("公鸡："+i+"只","母鸡："+m+"只","小鸡："+n+"只<hr>");
+				a++
+			}
+		}
+	}
+}document.write('总共有'+a+"种买法");
+
+
+
+</script>	
+</body>
+</html>

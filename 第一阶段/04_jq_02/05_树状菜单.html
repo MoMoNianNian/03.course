@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin:0;padding:0;}
+		.menu{
+			border: 1px solid pink;
+			width: 220px;
+			line-height: 34px;
+		}
+		.menu dt{
+			background: #2E84AB;
+			text-indent: 10px;
+		}
+		.menu dd{
+			background: #71C6C0;
+			text-indent: 30px;
+		}
+	</style>
+	<script src="jq/jquery-1.4.js"></script>
+	<script type="text/javascript">
+		$(function(){
+		//需求：页面初始状态，二级都是隐藏，显示第一组
+		$(".menu dd").hide();
+		$(".menu dt:first").nextUntil("dt").show();
+
+		//用户点击一级，展开对应二级
+		$(".menu dt").click(function(){
+			$(".menu dd").hide();
+			$(this).nextUntil("dt").show();
+		});
+
+
+		})
+		
+
+
+
+
+
+	</script>
+</head>
+<body>
+	<dl class="menu">
+		<dt>图书</dt>
+		<dd>漫画</dd>
+		<dd>青年文摘</dd>
+		<dd>励志文学</dd>
+
+		<dt>电子产品</dt>
+		<dd>遥控汽车</dd>
+		<dd>手机模型</dd>
+		<dd>洗衣机</dd>
+		<dd>冰箱</dd>
+
+		<dt>服装</dt>
+		<dd>男装</dd>
+		<dd>女装</dd>
+		<dd>童装</dd>
+	</dl>
+</body>
+</html>

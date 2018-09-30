@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+<style>
+    *{margin: 0;padding: 0;}
+  .showBox{
+    width: 300px;
+    height:180px;
+    margin:20px auto;
+    border:1px solid steelblue;
+    border-radius: 4px;
+    position: fixed;
+    /* top: 50%; */
+    margin-top: 70px;
+    left: 50%;margin-left: -150px;
+    box-shadow: 0 0 5px 1px rgba(0,0,0,0.4);
+  }
+  .showBox .title{
+    line-height: 40px;
+    background:steelblue;
+    color: white;
+    text-indent: 16px;
+  }
+  .showBox .content{
+    text-align: center;
+  }
+  .showBox .content .msg{
+    margin-top: 20px;
+    /* border:1px solid red; */
+    line-height: 50px;
+    color: steelblue;
+  }
+  .showBox .content .btns{
+    line-height: 60px;
+  }
+  .showBox .content .btns input{
+    width: 64px;height: 32px;
+    border:none;
+    color: white;
+    outline: none;
+    margin:0 3px;
+    border-radius: 2px;
+  }
+  .btns input.yes{
+    background: red;
+  }
+  .btns input.no{
+    background:steelblue;
+  }
+  /* .showBox{display:none;} */
+  </style>
+</head>
+<body>
+  <!-- 消息提示框布局 -->
+  <div class="showBox" id="elem">
+    <div class="title">消息</div>
+    <div class="content">
+      <p class="msg">提示信息内容</p>
+      <p class="btns">
+        <!-- <input type="button" class="yes" value="确认">
+        <input type="button" class="no" value="取消"> -->
+      </p>
+    </div>
+  </div>
+
+  <!-- 测试 -->
+  <input type="button" value="购买"  id="btn1">
+  <input type="button" value="删除"  id="btn2">
+
+  <!-- 购物车 -->
+  <ul id='car' style='border:1px solid red;width:300px';>
+    <li>商品1：电脑</li>
+    <li>商品2：手机</li>
+    <li>商品3：电扇</li>
+    <li>商品4：图书</li>
+  </ul>
+
+<script>
+//定义一个对象：包含了对提示框的操作方法
+//1）显示功能：show
+//2）隐藏功能：hide
+//3）处理信息显示：showMsg
+//4）提示框：alert(msg)
+//5）询问框：confirm(msg,callback)
+
+//获取提示框盒子
+var showBox=document.querySelector('.showBox');
+var title=showBox.querySelector('.title');
+var msg=document.querySelector('.showBox .msg');
+var btns=document.querySelector('.btns');
+
+var isYunsuan = false;
+
+console.log(showBox);
+console.log(msg);
+
+
+var showTip = {
+  show:function(){//显示
+    console.log('显示');
+    showBox.style.display='block';
+  },
+  hide:function(){//隐藏
+    console.log('隐藏');
+    showBox.style.display='none';
+  },
+  showMsg:function(){//处理信息
+    console.log('处理信息');
+    console.log(arguments);
+    console.log(arguments[0]);
+    console.log(arguments[0]['buttons']);
+
+    //1)显示信息框
+    showTip.show();
+    //2）自己定义信息框的内容，title，msg，buttons
+    title.innerHTML=arguments[0].title;
+    msg.innerHTML=arguments[0]['msg'];
+    console.log(arguments[0]['buttons']);
+    //清除按钮，再添加新按钮
+    btns.innerHTML = '';
+    var btn=arguments[0]['buttons'];
+    for(key in btn){
+      btns.innerHTML +="<input type=button class="+key+" value="+btn[key]+" onclick='showTip.hide()'>"
+    }
+    //3）如果有回调函数，当我们点击确认按钮，要执行回调函数
+    console.log(arguments[0].fn);
+    if(arguments[0].fn){//有回调函数
+      console.log('有回调函数');
+      //点击确认按钮：才可以执行回调函数
+      //第一件事：隐藏 第二件事：处理函数
+      btns.querySelector('input.yes').addEventListener('click',arguments[0].fn);
+    }
+
+    // if(isYunsuan == true){
+    //   showTip.show(); 
+    // msg.innerHTML=arguments[0].msg;
+    // no.style.display='none';
+    // yes.onclick=function(){
+    //   showTip.hide();
+    // }
+    // }else if(isYunsuan == false){
+    //   showTip.show(); 
+    //   title.innerHTML=arguments[0].title;
+    //   msg.innerHTML=arguments[0]['msg'];
+    //   no.style.display='inline-block';
+    //   yes.onclick=function(){
+    //   showTip.hide();
+    //   alert('正在删除....');
+    // }
+    //   no.onclick=function(){
+    //   showTip.hide();
+    // }
+    // }
+    
+    
+       
+  },
+  alert:function(msg){//提示框
+    console.log('提示框');
+    console.log(this);
+    isYunsuan = true;  
+    this.showMsg({title:'消息',msg:msg,buttons:{yes:'确认'}});
+  },
+  confirm:function(msg,callback){//询问框
+    console.log('询问框');
+    isYunsuan = false; 
+    showTip.showMsg({title:'询问',msg:msg,buttons:{yes:'确认',no:'取消'},fn:callback});
+  }
+};
+// 页面初始化：先隐藏一下盒子
+showTip.hide();
+
+
+//点击按钮：调用弹框
+var btn1_obj = document.getElementById('btn1');
+var btn2_obj = document.getElementById('btn2');
+btn1_obj.onclick = function(){
+  showTip.alert('请先登录或者注册');
+} 
+btn2_obj.onclick = function(){
+  showTip.confirm('是否要删除购物车商品',function(){
+    console.log('正在删除....');
+    //清空购物车
+    var myCar = document.getElementById('car');
+    myCar.remove();
+  });
+} 
+
+
+
+</script>
+
+</body>
+</html>

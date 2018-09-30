@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+for(var i=0;i<=2;i++){
+	for(var j=1;j<=3;j++){
+		//打印i？j？
+		document.write(i+":"+j+"<hr>");
+	}
+}	
+
+//需求2：创建一个5行3列的表格，大小500*300
+//tr：行 td：列
+//添加效果：偶数行加orange背景色
+document.write("<table width=500 height=300 border=1 bordercolor=red>");
+	for(var tr=1;tr<=5;tr++){
+		if(tr%2==0){
+		document.write("<tr bgcolor=orange>");
+	 }
+		for(var td=1;td<=3;td++){
+			document.write("<td>"+tr+"行"+td+" 列"+"</td>");
+		}document.write("</tr>");
+			
+	}
+document.write("</table>");
+
+</script>
+
+</body>
+</html>

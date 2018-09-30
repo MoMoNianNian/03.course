@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  .yeye{
+    width: 400px;height: 400px;
+    border:1px solid red;
+  }
+  .baba{
+    width: 300px;height: 300px;
+    border:1px solid blue;
+  }
+  .erza{
+    width: 200px;height: 200px;
+    border:1px solid green;
+  }
+  </style>
+</head>
+<body>
+<!-- 多层嵌套的div -->
+<div class='yeye'>
+  <div class='baba'>
+    <div class='erza'></div>
+  </div>
+</div>
+<script>
+  //事件处理函数
+ function show(event){
+   console.log('事件执行了');
+   console.log(event);//目标对象
+   console.log(this);//
+ }
+  // 对标签添加单击事件
+  var erza = document.querySelector('.erza');
+  //erza.onclick = show;
+  erza.addEventListener('click',show,true);//捕获 false 冒泡 
+  //可添加多个事件
+  //给爸爸也添加上一个事件
+  var baba = document.querySelector('.baba');
+  baba.addEventListener('click',show,true);   //show 必须是命名函数
+
+</script>
+</body>
+</html>

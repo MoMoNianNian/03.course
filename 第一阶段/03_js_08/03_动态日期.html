@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.p1{
+			width: 400px;
+			border: 1px solid red;
+		}
+	</style>
+</head>
+<body>
+<p class="p1"></p>
+<script>
+//1）获取时间，并且显示到p标签
+function getToday(){
+	var today = new Date();
+	var year = today.getFullYear();
+	var month = today.getMonth()+1;
+	var day = today.getDate();
+	var week = today.getDay();
+	var arr=['日','一','二','三','四','五','六'];
+		week=arr[week];
+	var H = today.getHours();
+		H<10?H='0'+H:H;
+	var M = today.getMinutes();
+		M<10?M='0'+M:M;
+	var S = today.getSeconds();
+		S<10?S='0'+S:S;
+
+	var p_obj = document.querySelector('.p1');
+	p_obj.innerHTML = year+'年'+month+'月'+day+'日 星期'+week+' '+H+':'+M+':'+S;
+}
+
+//2）设置计时器，间隔1秒，重新获取时间
+getToday()
+setInterval(getToday, 1000);
+
+</script>	
+</body>
+</html>

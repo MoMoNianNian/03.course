@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{margin:0;padding:0;}
+	body{
+		background: #EAE8E8;
+	}
+	.outBox{
+		border:1px solid red;
+	}
+	.item{
+		width: 224px;
+		height: 260px;
+		/* border:1px solid blue; */
+		background:white;
+		position: relative;
+		margin:10px;
+		float: left;
+	}
+	.item .big{
+		width: 224px;height: 112px;
+	}
+	.item .small{
+		position: absolute;
+		left: 50%;margin-left: -40px;
+		top:72px;
+		border-radius: 40px;
+		box-shadow:0 0 0 3px white;
+		/* 内边框:四个方向都要设置; */
+
+	}
+	.item:hover{
+		box-shadow: 0 0 5px 2px rgba(0,0,0,0.5);
+	}
+
+
+
+	</style>
+</head>
+<body>
+	<div class="outBox">
+		<div class="item">
+			<img class="big" src="css3/04-边框/案例/images/item_1.jpg">
+			<img class="small" src="css3/04-边框/案例/images/logo_1.jpg">
+		</div>
+		<div class="item">
+			<img class="big" src="css3/04-边框/案例/images/item_2.jpg">
+			<img class="small" src="css3/04-边框/案例/images/logo_2.jpg">
+		</div>
+		<div class="item">
+			<img class="big" src="css3/04-边框/案例/images/item_3.jpg">
+			<img class="small" src="css3/04-边框/案例/images/logo_3.jpg">
+		</div>
+		<div class="item">
+			<img class="big" src="css3/04-边框/案例/images/item_4.jpg">
+			<img class="small" src="css3/04-边框/案例/images/logo_4.jpg">
+		</div>
+		<div class="item">
+			<img class="big" src="css3/04-边框/案例/images/item_5.jpg">
+			<img class="small" src="css3/04-边框/案例/images/logo_5.jpg">
+		</div>
+
+	</div>
+</body>
+</html>

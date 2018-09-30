@@ -1,0 +1,50 @@
+/*
+* @Author: Administrator
+* @Date:   2018-08-06 16:40:21
+* @Last Modified by:   Administrator
+* @Last Modified time: 2018-08-06 17:33:06
+*/
+/* 初始化页面 */
+*{margin:0;padding:0;}
+
+
+/* 头部 */
+/* header_top */
+.header_top{
+	border:1px solid red;
+	background: #F5F5F5;
+}
+.header_top .con{
+	width: 1000px;
+	border:1px solid blue;
+	margin:0 auto;
+	overflow: hidden;
+	line-height: 38px;
+}
+.header_top .con .left{
+	float: left;
+	border:1px solid orange;
+}
+.header_top .con .right{
+	float: right;
+	border:1px solid green;
+}
+/* header_center */
+.header_center{
+	width: 1000px;
+	border:1px solid blue;
+	margin:0 auto;
+	overflow: hidden;
+}
+.header_center img{
+	border:1px solid red;
+	float: left;
+}
+.header_center .nav{
+	border:1px solid orange;
+	float: right;
+}
+
+
+
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.boxs{
+		width: 600px;
+		border:3px solid black;
+		margin:20px auto;
+
+	}
+	.red{
+		width: 180px;height: 180px;
+		
+		background: red;
+		 position: relative;/*相对定位*/
+		 left:30px;
+		 top:50px;
+		z-index:11;  
+	} 
+	 .blue{
+		width: 180px;height: 180px;
+		background: blue;
+		 position: relative;
+		 /*相对定位*/ 
+		 left:70px;
+		 top:40px; /*距离它本身顶部50px*/
+	    /*距离它本身左边70px*/
+
+		/* 纵深:提高图层顺序; */
+		 z-index:10;  
+	} 
+	.green{ 
+		width: 180px;height: 180px;
+		background: green;
+		 position: relative; 
+         z-index:9;  
+
+	}
+
+
+
+	</style>
+</head>
+<body>
+	<div class="boxs">
+		<div class="red"></div>
+		<div class="blue"></div>
+		<div class="green"></div>
+	</div>
+</body>
+</html>

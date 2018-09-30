@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+
+	/* id选择器 */
+	#box3{
+		border:10px groove red;
+	}
+	/* 属性选择器 */
+	div[name=box2]{
+		border:3px double purple;
+	}
+	/* class选择器 */
+	.box1{
+		border:5px dashed green;
+	}
+	/* 标签选择器 */
+	div{
+		width: 500px;
+		height: 200px;
+		border:3px solid red;
+		border:4px solid blue;
+	}
+	/*  *<标签<class类<属性选择器<id<行内   */
+
+	/* 通配选择器 */
+	*{
+		/* border:1px solid red; */
+	}
+
+
+	</style>
+</head>
+<body>
+	<div class="box1" name="box2" id="box3"
+	style="border:1px solid green">李白</div>
+
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>取消与利用冒泡</title>
+	<meta charset="utf-8"/>
+  <style>
+	#btn{width:320px;}
+	#btn button{
+		width:50px;
+		height:50px;
+		font-size:18px;
+		margin:5px;
+	}
+	#sc{
+		font-size:20px;
+		width:240px;
+		height:60px;
+		resize:none;
+		text-align: right;
+		line-height: 60px;
+		padding-right: 20px;
+		outline: none;
+	}
+	</style>
+</head>
+<body>
+	<input type="text" value="" id="rs">
+	<textarea id="sc" readonly>0</textarea>
+	<div id='btn'>
+		<button>1</button>
+		<button>2</button>
+		<button>3</button>
+		<button>4</button>
+		<button>5</button>
+		<button>6</button>
+		<button>7</button>
+		<button>8</button>
+		<button>9</button>
+		<button>0</button>
+		<button>C</button>
+		<button>+</button>
+		<button>-</button>
+		<button>=</button>
+	</div>
+	<script>
+  /*实现:简易计算器
+        两个数值的运算 + - */
+  //分析功能
+  //需要参数设置：
+  var first = '';//前一个值
+  var typeName = '';//记录运算符类型
+  var isYusuan = false;//未点击 true:点击了
+
+  /*1)点击数字按钮:获取数字值
+     如果上一步点了运算符:先清空值 
+     如果输入框不是0:添加到输入框
+     如果输入框是0:覆盖输入框 
+     
+  */
+ function numBtn(num){
+  // console.log('数字是'+num);
+  if(isYusuan){
+    text.value = '';
+    isYusuan = false;//未点击
+  }
+  if(text.value == 0){
+    text.value = num;
+  }else{
+    text.value += num;
+  }
+  console.log(text.value);
+ }
+
+  /*2)点击运算符:获取运算符
+     如果是 + ：记录类型是 + 把前一个值存储起来
+     如果是 - ：记录类型是 - 把前一个值存储起来
+     如果是 = ：如果类型是+|- 计算结果
+  */
+ function operatorBtn(value){
+  //  console.log('运算符是'+value);
+   isYusuan = true;//记录点了运算符
+   if(value == '+' || value == '-'){// + / -
+     //如果前边点击运算符:执行计算
+      if(typeName != ''){//执行计算
+          console.log('执行计算,上个运算符是',typeName);
+          if(typeName == '+'){
+            endRs = Number(first) + Number(text.value);
+          }else if(typeName == '-'){
+            endRs = Number(first) - Number(text.value);
+          }
+          //计算完修改输入框的值
+          text.value = endRs;
+      }
+     //记录运算符
+      typeName = value;     
+      first = text.value;
+    
+   }else{//是等号      
+      if(typeName == '+'){
+        endRs = Number(first) + Number(text.value);
+      }else if(typeName == '-'){
+        endRs = Number(first) - Number(text.value);
+      }
+      //计算完修改输入框的值
+      text.value = endRs;
+      typeName = '';
+
+   }
+
+ }
+
+  /*3)点击清除:
+     输入框归置0,所有信息初始化
+  */
+ function clearBtn(){
+    console.log('清除');
+    prevValue = '';
+    typeName = '';
+    isYusuan = false;
+    text.value = 0;
+ }
+
+ /*4)综合处理函数:
+     根据按钮值，决定做什么事情
+  */
+ function init(value){
+   console.log(value);
+   switch(value){
+     case '+':operatorBtn(value);break;
+     case '-':operatorBtn(value);break;
+     case '=':operatorBtn(value);break;
+     case 'C':clearBtn();break;
+     default:numBtn(value);
+   }
+ }
+
+
+ //获取输入框对象
+ var text = document.getElementById('sc');
+  //按钮添加事件
+  var btns = document.getElementById('btn');
+  // console.log(btns);
+  //利用事件冒泡给子元素添加事件
+  btns.onclick = function(e){
+    //当前按钮信息  e.target:目标按钮 标签名:nodeName
+    // console.log(e.target.nodeName);
+    //如果是按钮:继续操作
+    if(e.target.nodeName == 'BUTTON'){
+      var num = e.target.innerHTML;
+      // console.log(num);
+      init(num);
+    }
+    
+  }
+
+	</script>
+</body>
+</html>

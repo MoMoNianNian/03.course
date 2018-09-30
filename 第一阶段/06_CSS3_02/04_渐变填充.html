@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+        	.linear{
+        		width: 600px;height: 80px;
+        		border: 1px solid black;
+        		/* 渐变色填充背景 线性渐变 */
+        		/* -webkit- 谷歌浏览器内核/safari */
+        		background-image: -webkit-linear-gradient(left,red 50%,yellow,green);
+				/* -o- 欧朋 */
+        		background-image: -o-linear-gradient(left,red,yellow,green);
+        		/* -moz- 火狐 */
+        		background-image: -moz-linear-gradient(left,red,yellow,green);
+        		/* -ms- IE不使用了 */
+        		background-image: -ms-linear-gradient(left,red,yellow,green);
+        	}
+        	.linear1{
+        		width: 200px;
+        		height: 400px;
+        		border: 1px solid black;
+        		margin-top: 20px;
+        		/* 从左往右 */
+        		background-image: linear-gradient(to right,pink,skyblue);
+        		/* 左下-右上 */
+        		background-image:  -webkit-linear-gradient(left bottom,pink,skyblue);
+        		/* 角度 */
+        		 background-image:  -webkit-linear-gradient(45deg,pink,skyblue,#C6F3E0,#F3EFBE);
+
+        	}
+
+        	.box2{
+        		width: 400px;
+        		height: 400px;
+        		border: 1px solid black;
+        		/* 背景色填充，径向渐变 */
+        		/*  background-image:-webkit-radial-gradient(50px,circle,white,pink,yellow); */
+        		 background-image:-webkit-radial-gradient(80px at 300px 150px,pink,yellow);
+        	}
+        </style>
+    </head>
+    <body>
+    	<div class="linear"></div>
+    	<div class="linear1"></div>
+    	<div class="box1"></div>
+    	<div class="box2"></div>
+    </body>
+</html>

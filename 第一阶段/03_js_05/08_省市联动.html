@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- 省份下拉列表 -->
+	<select id="pro" onchange="changePro()"></select>
+	<!-- 城市下拉列表 -->
+	<select id="city"></select>
+<script>
+//省份数组
+var proArr = ['江苏省','浙江省','安徽省','河南省']
+//城市数组	
+var cityArr = [
+	['南京市','苏州市','镇江市','无锡市','泰州市','盐城市', '连云港市'],
+	['杭州市','绍兴市','温州市','宁波市'],
+	['黄山市','合肥市','蚌埠市'],
+	['郑州市','开封市','洛阳市','信阳市']
+];
+
+//1)查找下拉列表标签元素 根据id找
+var pro_sel = document.getElementById('pro');
+
+//2)往select里放内容 放省份
+for(key in proArr){//省份名：proArr[key]
+  pro_sel.innerHTML+= "<option>"+proArr[key]+"</option>";   
+}
+
+
+//3)往select里放内容 放城市：第一组城市cityArr[0]
+var city_sel = document.getElementById('city');
+ for(key in cityArr[0]){//省份名：cityArr[0][key]
+  city_sel.innerHTML+="<option>"+cityArr[0][key]+"</option>";   
+} 
+
+//4）联动效果
+/*
+	省份下拉列表选项改变的时候：去做事情
+	onchange事件：内容发生改变的事件
+	获取当前是哪个省份（选项):
+	selectedIndex 属性：被选中的option的索引下标
+ */
+function changePro(){
+	//所有事情的执行过程
+	//获取被选中的option的索引下标
+	var i = pro_sel.options.selectedIndex;
+	console.log(pro_sel.options);
+	console.log(i);
+	//i option的下标==省份下标==一组城市
+	//找到对应的城市，放到城市下拉列表里
+  	//cityArr[i]
+  	//清空原先城市
+  	city_sel.innerHTML="";
+  	for(key in cityArr[i]){
+  	city_sel.innerHTML += "<option>"+cityArr[i][key]+"</option>";   
+	}
+ 
+} 
+   
+
+	
+
+
+
+
+
+//2)往select里放内容
+/*pro_sel.innerHTML = "<option>"+proArr[i]+"</option>";
+console.log(pro_sel.innerHTML);
+city_sel.innerHTML = "<option>南京市</option>,<option>苏州市</option>,<option>镇江市</option>,<option>镇江市<option>";
+console.log(pro_sel.innerHTML);*/
+ 
+
+
+
+
+
+/*	 btn.onclick = function(){
+	 	
+	 }*/
+</script>	
+</body>
+</html>

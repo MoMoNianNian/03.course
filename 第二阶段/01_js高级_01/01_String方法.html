@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  // Js对象
+  // 方法:
+  var str = "不努力一下,你就不知道什么叫绝望!";
+
+  console.log(str.charAt(3));//一
+  console.log(str.charAt(30));//""
+
+  console.log(str.charCodeAt(3));//19968
+  console.log(str.charCodeAt(6));//20320
+  console.log(str.charCodeAt(30));//NaN(非数值)
+
+  console.log(str.search('不'));//0
+  console.log(str.search('努力'));//1
+  console.log(str.search(/不/));//0
+  console.log(str.search(/努力/));//1
+  console.log(str.search(/不/g));//0
+  // g在该方法里没有作用,只会搜索一次
+  console.log(str.search(/bb/g));//-1
+
+  console.log(str.match('不'));
+  //["不", index: 0, input: "不努力一下,你就不知道什么叫绝望!", groups: undefined]
+  console.log(str.match(/不/));
+  //["不", index: 0, input: "不努力一下,你就不知道什么叫绝望!", groups: undefined]
+  console.log(str.match(/不/g));
+  // ["不", "不"]
+  console.log(str.match(/aa/g));//null
+
+  // 替换字符串
+  var str = "AA BB CC DD,AA BB CC DD";
+  console.log(str.replace('AA','aa'));
+  //aa BB CC DD,AA BB CC DD
+  console.log(str.replace(/BB/,'bb'));
+  //AA bb CC DD,AA BB CC DD
+  console.log(str.replace(/CC/g,'cc'));
+  //AA BB cc DD,AA BB cc DD
+  
+  // 连接字符串
+  var str1 = "今天是星期一,";
+  var str2 = "我很开心,";
+  var str3 = "因为又可以学习了!";
+  console.log(str1.concat(str2,str3));
+  //今天是星期一,我很开心,因为又可以学习了!
+
+  // 分隔字符串
+  var str = "姓名:小丽;性别:女;年龄:18";
+  console.log(str.split(';'));
+  //["姓名:小丽", "性别:女", "年龄:18"]
+  console.log(str.split(/:/));
+  //["姓名", "小丽;性别", "女;年龄", "18"]
+  
+  // 截取字符串
+  var str = "将来的你一定会感谢现在拼命的自己!";
+  console.log(str.slice(4,9));//一定会感谢
+  console.log(str.slice(-4));//的自己!
+  //-4 倒数第四个字符
+  console.log(str.slice(-2));//己!
+
+  console.log(str.substr(4,9));//一定会感谢现在拼命
+  console.log(str.substr(-4));//的自己!
+  console.log(str.substring(4,9));//一定会感谢
+  console.log(str.substring(-6));
+  //将来的你一定会感谢现在拼命的自己!
+  //没有负值
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+</script>  
+</body>
+</html>

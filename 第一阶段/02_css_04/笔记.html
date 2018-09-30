@@ -1,0 +1,130 @@
+第二章 CSS
+第四节
+一.div布局实现自适应高度
+	适用情况:
+		当子元素浮动造成父元素没有高度
+	1)方法1:给父盒子加overflow:hidden;
+	<style>
+		.father{
+			overflow: hidden;
+		}
+		.left{float: left;}
+		.right{float: right;}
+	</style>
+	<div class="father">
+		<div class="left"></div>
+		<div class="right"></div>
+	</div>
+	2)方法2:给父盒子末端添加一个子盒子
+	<style>
+		.clearBox{
+			clear: both;
+		}
+	</style>
+	<div class="father">
+		<div class="left"></div>
+		<div class="right"></div>
+		<!-- 末端添加 -->
+		<div class="clearBox"></div>
+	</div>
+	
+	3)方法3:给父盒子末端添加一个子盒子
+		通过伪选择器 :after
+	<style>
+		.father:after{
+			content: "杜甫";
+			display: block;
+			clear:both;
+		}
+	</style>
+	4)方法4:布局正常,但是父盒子没有高度
+	<style>
+		.left{float: left;}
+		.right{float: right;}
+		.bottom{clear:both;}
+	</style>
+	<div class="father">
+		<div class="left"></div>
+		<div class="right"></div>
+	</div>
+	<div class="bottom"></div>
+	弊端:father边框和背景是无效的
+	5)方法5:给父盒子设定固定值
+	<style>
+		.father{
+			/* 要 >= 最高的子元素*/
+			height: 100px;
+		}
+	</style>
+
+二.css样式:溢出处理
+	overflow:visible;  	默认显示
+	overflow:auto;		自动添加滚动条
+	overflow: hidden; 	隐藏
+	案例:溢出文本以省略号显示
+	<style>
+	.list li{
+		border-bottom: 1px dashed red;
+		height: 40px;
+		line-height: 40px;
+		/* 不能断行,不许换行 */
+		white-space:nowrap;
+		/* 溢出内容:隐藏; */
+		overflow: hidden;
+		/* 溢出文本:以省略号显示; */
+		text-overflow:ellipsis;
+		/* word-break:keep-all; */
+	}
+	</style>
+
+三.显示和隐藏
+	1)display显示类型 
+		display:none;	(不占位置)
+		display:block;
+				inline-block;
+				inline;
+	2)visibility:显示状态
+		visibility:visible;显示
+		visibility:hidden;隐藏(占位置)
+	3)opacity:透明度(0-1)
+		opacity:0;隐藏(占位置)
+		opacity:1;显示
+
+四.css精灵技术(CSS Sprite)
+	原理:利用一张大图,结合background-position实现不同位置显示
+	优点: 节省项目空间,优化网站加载速度
+
+	使用情况:
+	一组大小,位置相同的图片,处理成一张组合图
+五.左右自适应居中
+	<style>
+		div{
+			width:900px;
+			margin-left:auto;
+			margin-right:auto;
+		}
+	</style>
+
+六.目录结构
+	移动云目录
+		--css目录
+			--index.css
+		--images目录
+			--bg01.png
+		--index.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

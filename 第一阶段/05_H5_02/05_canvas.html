@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#canvas1{
+			border: 1px solid blue;
+		}
+	</style>
+</head>
+<body>
+	<!-- 画布 -->
+	<canvas id="canvas1" width="300" height="300"></canvas>
+	<!-- 用js实现绘图的功能 -->
+	<script type="text/javascript">
+		//1）找到画布
+		var canvas=document.getElementById("canvas1");
+		//2）设置绘图类型（2D图形）
+		var cx=canvas.getContext("2d");
+		//3）挑选工具，设置参数，最后实际绘制
+		cx.fillStyle="#ABA7A7";//设置填充色
+		cx.strokeStyle='#F6D70D';//设置描边色
+		cx.rect(10,10,50,50);//并没有实际绘制（设定参数）
+		cx.stroke();//描边绘制（实际绘图）
+		cx.fill();//填充绘制（实际绘图）
+		cx.fillStyle="#EEB0B0";
+		cx.fillRect(90,10,50,90);
+
+
+		cx.fillStyle="#9A5656";//设置填充色
+		cx.strokeStyle='#1FBA9C';//设置描边色
+		cx.moveTo(60, 0);//线条终点
+		cx.lineTo(300, 300);//线条起点	
+		cx.stroke();//描边绘制（实际绘图）
+		
+</script>
+
+
+
+</body>
+</html>

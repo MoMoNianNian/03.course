@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box1{
+			width: 100px;height: 100px;
+			background:pink ;
+			/* 加上过渡 */
+			transition:background 2s linear,width 2s; 
+			transition:all 2s; 
+		}
+		.box1:hover{
+			background: #ACABA8;
+			width: 600px;
+			/* margin-top: 50px; */
+			
+		}
+		.box2{
+			width: 100px;
+			height: 100px;
+			text-align: center;
+			line-height: 100px;
+			background: skyblue;
+			transform: translate(0, 50px);
+			transform: translate(100px, 0);
+		}
+		.box3{
+			width: 100px;height: 100px;
+			background-image: -webkit-linear-gradient(top,pink,skyblue);
+			text-align: center;
+			line-height: 100px;
+			/* 旋转 */
+			transform: rotate(45deg);
+		}
+		.box4{
+			width: 100px;
+			height: 100px;
+			text-align: center;
+			line-height: 100px;
+			background: #F0B175;
+			/*  缩放 */
+			transform: scale(2,0.5);
+
+		}
+		.box5{
+			width: 100px;
+			height: 100px;
+			text-align: center;
+			line-height: 100px;
+			background:#9B8D8D;
+			margin-left: 30px;
+			/*  斜切 */
+			transform: skew(60deg) rotate(60deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="box1"></div>
+	<div class="box2">位移</div>
+	<div class="box3">旋转</div>
+	<div class="box4">缩放</div>
+	<div class="box5">斜切</div>
+</body>
+</html>

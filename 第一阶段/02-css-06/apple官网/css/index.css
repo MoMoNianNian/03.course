@@ -1,0 +1,44 @@
+/* 初始化 */
+*{margin:0;padding: 0;}
+html,body{font-family:"微软雅黑";font-size: 14px;}
+ul,li{list-style: none;}
+a{text-decoration: none;}
+/* 公共类 */
+.autobox{margin:0 auto;width: 1000px;}
+.overflowh{overflow: hidden;}
+.leftbox{float: left;}
+.rightbox{float:right;}
+.father:after{content:"";display: block;clear: both;}
+/* 导航区navbox */
+.navbox{/* border: 3px solid red; */background-color: #606060;}
+.navbox .con{/* border: 1px solid green; */}
+.navbox .con img,.navbox .con .navtext{float: left;}
+.navbox .con img{margin-top: 15px;}
+.navbox .con .navtext{
+	position: relative;
+/* 	border: 2px solid orange; */
+	line-height: 50px;
+}
+.navbox .con .navtext a{
+	/* border: 1px solid red; */
+	height: 50px;display: block;
+	padding:0 18px;
+	font-size: 20px;
+	color: white;
+}
+.navbox .con .navtext ul{
+	position: absolute;
+	top: 50px;left:0;
+	background-color: #ccc;
+	display: none;
+/* 	border: 1px solid red; */
+	width: 100%;
+	text-align: center;
+}
+/* 经过一级导航，让二级导航显示 */
+/* .navbox .con .navtext>a:hover+ul{display:block;} */
+/* 经过父元素navtext,让二级导航显示 */
+.navbox .con .navtext:hover ul{display: block;}
+.navbox .con .navtext ul li a{color: black;}
+.navbox .con .navtext ul li a:hover{color: white;}
+.navbox .con .navtext>a:hover{color:white;}

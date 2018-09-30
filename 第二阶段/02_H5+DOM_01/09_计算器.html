@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  .box{
+    border:1px solid red;
+    width:700px;height: 800px;
+    position:relative;
+  }
+  .boxda{width:600px;height: 80px;line-height: 80px;margin:20px 50px;
+    border:1px solid black;background: #EFEFEF;
+    font-size:30px;text-align: center;}
+  .boxshu{width:600px;height: 600px;margin:0px 50px;
+    border:1px solid black;}
+  .box1,.box2,.box3,.box4,.box5,.box6,.box7,
+  .box8,.box9,.box10,.box11,.box12,.box13,.box14
+  { width:120px;height: 120px;
+  font-size: 30px;
+  margin:12px;}
+  .box13{position: absolute;
+          botton:100px;left:100px;}
+  </style>
+  <script src='./jq/jquery-1.9.1.min.js'></script>
+  <script>
+  $(function(){
+    var da_obj=document.querySelector('.boxda');
+    console.log(da_obj);
+    var input_obj=document.querySelectorAll('input[type="button"]');
+    console.log(input_obj);
+    
+    $(".boxshu input").click(function(){
+      console.log(this);
+      console.log(this.value);
+      da_obj.innerHTML+=this.value;
+      
+      var da=da_obj.innerHTML;
+      
+      console.log(da);
+      console.log(da.split('+'));
+      var dashu=da.split('+');
+      console.log(dashu);
+      
+      $(".box13").click(function(){
+      for(var i=0;i<dashu.length;i++){
+        console.log(dashu[0]);
+       da_obj.innerHTML=Number(dashu[0])+Number(dashu[1]);
+      } 
+    })
+  
+    })
+    
+    $(".box14").click(function(){
+      da_obj.innerHTML='';
+    })
+    
+  })
+  
+  </script>
+</head>
+<body>
+<div class='box'>
+  <div class='boxda'></div>
+  <div class='boxshu'>
+  <input type="button" value='1'class='box1'>
+  <input type="button" value='2'class='box2'>
+  <input type="button" value='3'class='box3'>
+  <input type="button" value='4'class='box4'>
+  <input type="button" value='5'class='box5'>
+  <input type="button" value='6'class='box6'>
+  <input type="button" value='7'class='box7'>
+  <input type="button" value='8'class='box8'>
+  <input type="button" value='9'class='box9'>
+  <input type="button" value='0'class='box10'>
+  <input type="button" value='+'class='box11'>
+  <input type="button" value='-'class='box12'>
+  
+  <input type="button" value='C'class='box14'>
+   
+
+</div>
+  <input type="button" value='='class='box13'>
+</div>  
+</body>
+</html>

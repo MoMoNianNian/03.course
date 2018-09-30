@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  .box1{
+    height: 2000px;
+    border:1px solid red;
+    background:pink;
+    font-size:50px;
+  }
+  .navBox{
+    /* 固定在浏览器窗口最顶端 */
+    height: 40px;
+    width: 100%;
+    background:rgba(000, 000, 000, 0.5);
+    color:white;
+    font-size:30px;
+    position:fixed;
+    top:0;
+    text-align: center;
+  }
+  .toggle2{
+    background:white;
+    color: blue;
+  }
+  </style>
+  <script>
+  //当浏览器滚动时：去做一件事情
+  //当滚动条发生变化时
+  window.onscroll = function(){
+    console.log("滚动啦")
+    //距离顶部滚动的间距 scrollTop属性
+    var top =
+    document.documentElement.scrollTop ||document.body.scrollTop;
+    if(top == 0){//导航条：初始状态
+      document.querySelector('.navBox').classList.remove('toggle2');
+    }else if(top>=200){//导航条：切换白色背景
+      document.querySelector('.navBox').classList.add('toggle2');
+
+    }
+  }
+  
+  </script>
+</head>
+<body>
+<div class='navBox'>导航文字</div>
+<div class="box1">
+  这是<br>当<br>前<br>内<br>容<br>区<br>域
+  这是<br>当<br>前<br>内<br>容<br>区<br>域
+</div>  
+</body>
+</html>

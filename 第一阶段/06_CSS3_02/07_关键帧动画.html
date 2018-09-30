@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box1{
+			width: 100px;
+			height: 100px;
+			border: 1px solid black;
+			border-radius: 100px;
+			background: radial-gradient(circle,#B75959,#D3E967);
+			/* 使用动画 */
+			animation: moveTo2 5s;
+		}
+		/* 定义动画 */
+		@keyframes moveTo{
+			0%{
+				background: radial-gradient(circle,#000,red);
+				margin-top: 0;
+
+			}
+			25%{
+				background: radial-gradient(circle,#F2346A,#EB31A5);
+				margin-top: 100px;
+
+			}
+			50%{
+				background: radial-gradient(circle,#BA86D2,#F4D15D);
+				margin-top: 200px;
+
+			}
+			75%{
+				background: radial-gradient(circle,#BA86D2,#F0E3E3);
+				margin-top: 100px;
+
+			}
+			100%{
+				background: radial-gradient(circle,#4F7027,#B3A734);
+				margin-top: 150px;
+
+			}
+		}
+		@keyframes moveTo2{
+			from{margin-left: 0;margin-top: 0;}
+			to{margin-left: 600px;margin-top: 600px;}
+		}
+	</style>
+</head>
+<body>
+	<div class="box1"></div>
+</body>
+</html>

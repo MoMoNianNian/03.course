@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{width: 800px;
+			height: 40px;
+			border:1px solid green;}
+		.red{background: pink;}
+		.blue{background: blue;}
+	</style>
+	<script src="jq/jquery-1.9.1.min.js"></script>
+	<script>
+	$(function(){
+		// 鼠标进入div，变成红色背景，添加文字
+		// 移除没有背景色，移除文字
+		$(".box").hover(function() {
+			$(".box").addClass('red');
+			$(".box").html("沁园春·雪")
+			/* Stuff to do when the mouse enters the element */
+		}, function() {
+			$(".box").removeClass('red');
+			$(".box").html("")
+			/* Stuff to do when the mouse leaves the element */
+			// document.querySelector('.box').innerHTML="";
+		});
+
+	})	
+
+
+
+
+
+	</script>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>

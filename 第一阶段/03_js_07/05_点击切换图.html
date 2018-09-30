@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.imgBox{
+			border: 1px solid red;
+			width: 400px;
+		}
+		/* 大图 */
+		.imgBox img{
+			width: 400px;
+		}
+		/* 小图 */
+		.smallImg img{
+			width: 96px;
+		}
+ 		/* 当前小图加边框 */
+ 		.smallImg img.current{
+			border: 1px solid blue;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="imgBox">
+		<img src="img/11.jpg">
+		<div class="smallImg">
+			<img src="img/11.jpg" class="current">
+			<img src="img/12.jpg" class="current">
+			<img src="img/13.jpg" class="current">
+		
+		</div>
+	</div>
+<script>
+//需求：
+//点击小图，切换对应的大图
+//把当前小图的src 赋值给大图的src
+//         当前的小图加边框（添加current类）
+var big_obj=document.querySelector(".imgBox img");
+ console.log(big_obj);
+ 
+var small_obj=document.querySelectorAll(".smallImg img");
+   console.log(small_obj);	
+
+ for(key in small_obj){
+	small_obj[key].onclick=function(e){
+		//什么是e？
+		console.log(e);
+		console.log(e["srcElement"]);
+		//console.log(e['target']);
+		console.log(e.target);
+		console.log(this);
+
+//1)把被点击的小图的src赋值给大图的src		
+		console.log(this.src);
+		big_obj.src = this.src;
+		//2)给当前的小图添加current，其他的祛除
+		for(var i=0;i<small_obj.length;i++){
+		 	small_obj[i].classList.remove("current");
+		 }
+
+		this.className +=" current";
+	}
+
+}
+/*		 
+}*/
+
+
+
+
+
+</script>
+</body>
+</html>

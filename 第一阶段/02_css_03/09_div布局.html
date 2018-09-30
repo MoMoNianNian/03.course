@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.bigBox{
+		width:800px;
+		  
+		border:5px solid black;
+		background: #EF1111;
+		/* overflow: hidden; */
+	}
+	.redBox{
+		width: 100px;height: 400px;
+		background: pink;
+		/* 左浮动 */
+		 float: left;  
+		/* margin:20px 10px 0 10px;	 */
+	}
+	.greenBox{
+		width: 150px;height: 150px;
+		background: green;
+		/* 左浮动 */
+		 float: left;  
+		/* margin:20px 0 0 10px; */
+	}
+	.blueBox{
+		width: 200px;height: 200px;
+		background: blue;
+		/* 右浮动 */
+		  float: right;  
+		/* margin-top: 20px;
+		margin-right:20px;	 */	
+	}
+	.yellowBox{
+		width: 100px;height: 150px;
+		background: yellow;
+		/* 右浮动 */
+		  float: right;  
+		/* margin-top: 20px;
+		margin-right:20px;	 */	
+	}
+
+	 /* .orangeBox{
+		
+		清除浮动影响
+		  clear:both;  
+	} */	 
+     .bigBox:after{
+			content: "";
+			display: block;
+			clear:both;
+		}
+	</style>
+</head>
+<body>
+	<div class="bigBox">
+		<div class="redBox">aaaaaaa</div>
+		<div class="greenBox">bbbb</div>
+
+		<div class="blueBox">ccccc</div>
+		<div class="yellowBox">ccccc</div>
+		<!-- 添加一个盒子 -->
+		
+	</div>
+    <!-- <div class="orangeBox"></div> -->
+</body>
+</html>

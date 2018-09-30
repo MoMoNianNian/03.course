@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="关大象"
+	onclick="cl()"><br>
+<script>
+//做一件事情：把大象关进冰箱	
+	function cl(ainmal){
+		document.write("第一步：打开冰箱门<br>");
+		document.write("第二步：把"+ainmal+"关进去<br>");
+		document.write("第三步：关上冰箱门<br>");
+	}
+
+	//调用函数，才会执行
+	cl("大象");
+	document.write("<hr color=red>");
+	cl("泰迪");//把泰迪关进去
+	document.write("<hr color=red>");
+	cl("哈士奇");//把哈士奇关进去
+	document.write("<hr color=red>");
+//输出学生的个人信息
+//我的名字是：apple;
+//我来自：江苏省镇江市;
+//我的爱好是：吃喝玩乐;
+//我的最大理想是：周游世界.
+	function stu(name,city,like,dream){
+		document.write("<font color=red>我的名字是:"+name+";<br>");
+		document.write("<font color=blue>我来自:"+city+";<br>");
+		document.write("<font color=orange>我的爱好是:"+like+";<br>");
+		document.write("<font color=green>我的最大理想是:"+dream+".<br>");
+	}
+
+	stu("赵月","镇江","吃","巨有钱");
+		document.write("<hr color=red>");
+	stu("lall","南京","wan","后宫佳丽三千");
+</script>	
+</body>
+</html>

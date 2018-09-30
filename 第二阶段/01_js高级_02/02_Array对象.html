@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+//Array对象
+var arr1 = ['a','b','c'];
+var arr2 = [2,5,6];
+var arr3 = ['apple','banana'];
+//连接数组
+console.log(arr1.concat(arr2,arr3));
+//["a", "b", "c", 2, 5, 6, "apple", "banana"]
+
+//把数组转成字符串
+console.log(arr3.join());//apple,banana
+console.log(typeof(arr3.join()));//string
+console.log(arr3.join('@'));//apple@banana
+
+//  添加元素
+var arr4 = [1,2,3];
+console.log(arr4);
+arr4[4]=90;
+console.log(arr4);//[1, 2, 3, 4: 90]
+
+//尾部添加
+var arr5 = ['001','apple','男'];
+console.log(arr5.push('学习','唱歌'));//5
+console.log(arr5);//["001", "apple", "男", "学习", "唱歌"]
+//头部添加
+console.log(arr5.unshift(10,'嘻哈'));//7
+console.log(arr5);//[10, "嘻哈", "001", "apple", "男", "学习", "唱歌"]
+
+//删除元素
+//尾部删除最后一个元素
+console.log(arr5.pop());//唱歌
+console.log(arr5);//[10, "嘻哈", "001", "apple", "男", "学习"]
+//删除头部第一个元素
+console.log(arr5.shift());//10
+console.log(arr5);//["嘻哈", "001", "apple", "男", "学习"]
+
+//翻转数组(对下标进行反向排序)
+var arr3 = ['001','apple','19','学习'];
+console.log(arr3.reverse());//["学习", "19", "apple", "001"]
+
+//sort() 对元素值的排序
+var arr4 = ['aa','ff','bb','dsbh','bsdgvbb','cc','dd'];
+var arr5 = [10,87,45,204,21,3,09];
+console.log(arr4.sort());//["aa", "bb", "bsdgvbb", "cc", "dd", "dsbh", "ff"]
+console.log(arr5.sort());//[10, 204, 21, 3, 45, 87, 9]
+
+//需求：数值数组从大到小进行排序
+//1)返回值:a-b 从小到大排序
+//2)返回值=0
+//3)返回值:b-a 从大到小排序
+var newArr = arr5.sort(function(a,b){
+  //return a-b;
+  return b-a;
+});
+  console.log(newArr);
+  //[3, 9, 10, 21, 45, 87, 204]
+  //[204, 87, 45, 21, 10, 9, 3]
+</script>
+</body>
+</html>

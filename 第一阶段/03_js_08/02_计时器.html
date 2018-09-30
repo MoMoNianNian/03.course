@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+//需求：在控制台里输出1-10之间的数，一秒输出一个
+//定义一个函数，输出1-10之间的数
+var num = 1;
+function Num(){
+	if(num>10){//清除计时器
+		clearTimeout(t);
+	}else{
+		document.write(num+"<hr>");
+	num++;
+	}
+	
+}
+
+//第一次调用
+//Num();//1
+//第二次调用
+//Num();//2
+
+//用计时器控制间隔时间
+//间隔两秒，调用一次num函数
+var t = setInterval(Num, 2000);//循环调用
+//var t = setTimeout(Num, 2000);//1 只能调用一次
+
+
+
+</script>	
+</body>
+</html>

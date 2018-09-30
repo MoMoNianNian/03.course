@@ -1,0 +1,44 @@
++<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+//练习1：求和运算，求1+2+3+4+....+100=？
+for(i=1,sum=0;i<=100;i++){
+	sum+=i;
+}document.write(sum);
+
+
+//练习2：新闻列表实现
+//偶数行是粉色，奇数行是浅蓝色
+var newList = [
+'紧急通知',
+'“三八节”女性旅游乐享半价优惠',
+'暂停旅游社业务公告',
+'九华山门票恢复全价',
+'“三八”节短线游走俏',
+'4月初去动物园看羊驼',
+'安徽省旅游指委召开会议号召...'
+];	
+//arr[0] arr[1] arr[2] arr[arr.length-1]
+//下标：0-arr.length-1
+
+document.write("<ul>");
+for(var i=0;i<=newList.length-1;i++){
+if(i%2==1){
+	document.write("<li style='color:pink'>"+newList[i]+"</li>");
+}else{
+	document.write("<li style='color:blue'>"+newList[i]+"</li>");
+}
+}document.write("</ul>");
+
+
+
+
+
+</script>	
+</body>
+</html>

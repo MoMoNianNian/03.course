@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+//1)对象：属性(变量名)+方法(函数名)
+//应用：对象.属性名;/对象['属性名']]
+//      对象.方法名([参数值1,参数值2,...]);   
+
+//1)方法1：json对象 {}
+var obj = {
+  uname:'apple',
+  age:18,
+  act:function(){//添加的方法
+    return '我的名字是'+this.uname+'年龄为'+this.age;
+  }
+};
+//调用对象 obj就是一个对象 Object
+console.log(obj);//Object  
+console.log(obj.uname);//apple 
+console.log(obj.act());//我的名字是apple性别为18
+  
+//外部可添加属性和方法
+obj.sex = '女';
+obj.play = function(game){
+  console.log('今天去吃鸡：'+game);
+};
+
+//obj只是一个单个的对象，没有副本的
+//2）创建方式2：new Object()
+var obj2 = new Object();//只识别第一个值
+    obj2.num = 10;
+    obj2.str = 'banana';
+    obj2.isNull = function(){
+      if(obj2.str.length == 0){
+        return true;//是空的 自己定义的返回值
+      }else{
+        return false;//有值
+      }
+    }
+console.log(obj2);  
+console.log(obj2.isNull()); //false 有值
+
+//obj是一个对象：单个实际对象 李晨
+//obj2是一个对象：单个实际对象 邓超
+
+//工厂模式：定义一个模板
+//制造人类
+//属性：姓名 身份证号 性别
+//技能:唱歌 (歌曲) 玩游戏（游戏名）自我介绍（属性）
+
+function Person(name,code,sex){
+  //添加属性(构造函数通过this添加属性)
+  this.name = name;
+  this.code = code;
+  this.sex = sex;
+  //方法(占用内存问题)
+  //解决方案：把方法绑定到Person原型上
+  //原型名.prototype.方法名 = function(){}
+  Person.prototype.sing = function(music){
+    console.log('演唱歌曲：'+music);
+  }
+  Person.prototype.play = function(game){
+    console.log('今晚一起玩：'+game);
+  }
+  Person.prototype.info = function(){
+    console.log('姓名：'+this.name+'身份证号'+this.code+'性别'+this.sex);
+  }
+}
+//通过对象的方式去引用Person函数
+//new的方式--> 构造函数引用（构造一个对象雏形）
+//制造第一个人（实例）
+var person1 = new Person('葡萄',2455,'女');
+console.log(person1);
+//调用属性
+console.log(person1.code);//2455
+//方法
+//技能1：唱歌
+person1.sing('燃烧你的卡路里');//演唱歌曲：燃烧你的卡路里
+
+//制造 第二个人（实例）
+var person2 = new Person('鸦鸦',35,'男');
+console.log(person2);
+//调用属性
+console.log(person2.name,person2.sex);//鸦鸦 男
+//技能2：玩游戏
+person2.play('刺激战场');//今晚一起玩：刺激战场
+</script>  
+</body>
+</html>

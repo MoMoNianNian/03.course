@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//一维数组
+	var arr1 = ['apple',18,false];
+	//二维数组	
+	var arr2 = ['apple',18,false,[1,2,3]];
+	//三维数组	
+	var arr3 = [
+		[1,2,3],
+		[
+			['a','b','c'],
+			["apple","banana","orange"]
+		]
+	];
+	//打印数组
+	console.log(arr1);
+	console.log(arr2);
+	console.log(arr3);
+	console.log(arr2[3][2]);//3
+	console.log(arr3[1][0][1]);//b
+	console.log(arr3[1][1][2]);//orange
+
+
+	//存储5个学生信息
+	//学号 姓名 性别 年龄 爱好
+	//001 邓超  男   35   学习
+	//002 陈赫  男   34   吃
+	//003 李晨  男   40   健身
+	//004 鹿晗  男   26   唱歌
+	//005 baby  女   28   打扮
+var arr = [
+	['学号','姓名','性别','年龄','爱好'],
+	['001','邓超','男','35','学习'],
+	['002','陈赫','男','34','吃'],
+	['003','李晨','男','40','健身'],
+	['004','鹿晗','男','26','唱歌'],
+	['005','baby','男','28','打扮']
+];
+//取元素
+console.log(arr[3][4]);//健身
+//循环遍历取，每个学生信息占一行
+for(var n=0;n<=5;n++){
+	for(var m=0;m<=4;m++){
+		document.write(arr[n][m]);
+	}document.write("<br>");
+
+}
+document.write("<hr>");
+
+
+
+
+for(key in arr){
+	//key是下标
+	//值:arr[key]数组
+	console.log(arr[key]);
+	for(k in arr[key]){
+	//key是下标
+	//值:arr[key][k]
+	document.write(arr[key][k]);
+}document.write("<br>");
+}	
+
+</script>	
+</body>
+</html>

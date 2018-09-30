@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+//arguments是函数的内置对象
+function fun1(){
+  console.log(arguments);
+}
+fun1();//第一次调用
+fun1(20,34,77,'sf');//第二次调用
+console.log('--------------------');
+
+
+function fun2(num1,num2){//num1,num2 是形参
+  console.log(arguments);
+  console.log(arguments.length);//5 实参个数
+  console.log(arguments.callee);//函数本身
+  console.log(arguments.callee.length);//2 形参个数
+
+  //获取小标为1的实参
+  //类数组对象，不能使用数组原生的API
+  console.log(arguments[1]);//sahb
+  //console.log(arguments.indexOf('aps'));
+
+}
+fun2('aps','sahb',232,4,6);//'aps','sahb',232,4,6 是实参
+
+var str = 'ashhvihfhnjf';
+console.log(str.indexOf());//-1
+console.log(str.indexOf('h',2,5,'safhwoei'));//2
+
+//arguments对象：可以做一些参数处理
+function fun2(num1,num2){//num1,num2是形参
+  if(arguments.length != arguments.callee.length){
+    console.log("请传递正确的参数");
+  }
+  console.log(num1+num2);
+}
+fun2(10,23);//10,23是实际参数
+fun2(10,23,30);//10,23是实际参数
+
+//需求：用函数：求任意个数 数值的和
+function sum(){
+  //argument对象接受实参信息，类数组对象
+  console.log(arguments);
+  for(var i=0,sum=0;i<arguments.length;i++){
+    sum += arguments[i];
+  }
+  return sum;
+}
+console.log(sum(20,30,40));//90
+
+</script>  
+</body>
+</html>

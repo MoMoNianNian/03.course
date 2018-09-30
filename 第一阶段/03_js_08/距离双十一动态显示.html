@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.p1{line-height: 50px;
+			width: 400px;
+			border: 1px solid red;
+
+		}
+	</style>
+</head>
+<body>
+	<p  class="p1"></p>
+<script>
+	function getToday(){
+	var today = new Date();
+
+	var p_obj = document.querySelector('.p1');
+	
+
+//获取当前的时间 毫秒数
+	var time = new Date().getTime();
+	console.log(time); 
+//2018/11/11距离1970年1月1日 有多少毫秒
+	var endTime = new Date("2018/11/11").getTime();
+	console.log(endTime);
+
+//差值 今天距离双11有多少毫秒
+	var offTime=(endTime-time)/1000;//多少秒
+	console.log(offTime); 
+//换算？天？时？分？秒
+	var D=Math.floor(offTime/60/60/24);
+	console.log(D);
+
+	var H=Math.floor((offTime-(D*24*3600))/3600);  
+	console.log(H);
+	H<10?H='0'+H:H;
+	
+	var M=Math.floor((offTime-(D*24*3600)-(H*3600))/60);
+	console.log(M);
+	M<10?M='0'+M:M;
+	
+	var S=Math.floor(offTime-(D*24*3600)-(H*3600)-(M*60));
+	console.log(S);
+	S<10?S='0'+S:S;
+	p_obj.innerHTML ="距离双十一还剩"+D+'日'+H+'时'+M+'分'+S+'秒';
+}
+getToday();
+//2）设置计时器，间隔1秒，重新获取时间
+getToday()
+setInterval(getToday, 1000);
+</script>
+</body>
+</html>

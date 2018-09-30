@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.list{
+		width: 160px;
+		border:1px solid red;
+		line-height: 40px;
+		/*去掉ul的左内间距 */
+		padding-left: 0;	
+	}
+	.list li{
+		border-bottom: 1px dashed red;
+		/* 把列表符号位置移进来 */
+		list-style:inside;
+	}
+	/* 最后一个li去掉下边框 */
+	.list li:last-child{
+		border-bottom:0;
+	}
+	/* 第一个加粉色背景 */
+	.list li:first-child{
+		background: pink;
+	}
+	/* 第4个加蓝色背景 */
+	.list li:nth-child(4){
+		background:skyblue;
+	}
+
+	.article{
+		border:1px solid blue;
+		width: 240px;
+	}
+	/* 首行 */
+	.article:first-line{
+		background:red;
+	}
+	/* 首字符 */
+	.article:first-letter{
+		font-size: 46px;
+	}
+	/* 获得焦点的状态 */
+	input[type=text]:focus{
+		background: #F7F9AC;
+	}
+	input[type=password]:focus{
+		background: red;
+	}
+
+	.title1{
+		border:1px solid blue;
+	}
+	/* 对h1无效 */
+	.title1:focus{
+		background: #E883F2;
+	}
+	
+	</style>
+</head>
+<body>
+	<ul class="list">
+		<li>第一行</li>
+		<li>第二行</li>
+		<li>第三行</li>
+		<li>第四行</li>
+		<li>第五行</li>
+		<li>第六行</li>
+		<li>第七行</li>
+	</ul>
+	<p class="article">
+		国破山河在，城春草木深。<br>
+		感时花溅泪，恨别鸟惊心。<br>
+		烽火连三月，家书抵万金。<br>
+		白头搔更短，浑欲不胜簪。
+	</p>
+	<div>
+		<input type="text"><br>
+		<input type="password"><br>
+	</div>
+	<h1 class="title1">春望春望春望春望春望春望春望春望</h1>
+
+
+
+
+	<br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p>
+		正则验证1：<input type="text" name="txt1">
+	</p>
+	<form action="">
+	<p>
+		手机号：<input type="text" name="txt2" required pattern="^[1][35789][0-9]{9}$">
+	</p>
+	<input type="submit">
+	</form>
+	<script>
+		//失去焦点，验证
+		var txt1_obj=document.querySelector('input[name=txt1]');
+		//1)定义正则表达式
+		//        /[abcd]{3}/    abld  ab l(返回false)
+		//       /^[abcd]{3}$/     abce  abc(返回ture)
+		//       /^[abcd]+$/     abcdabe  abcdab e(返回false)
+		var pat1 = /^[a-z0-9]{6,10}$/;
+
+		//需求1：用户名规范 可以有字符或数字或_,不能超过11个字符
+		var pat1 = /^[a-zA-Z0-9_]{1,11}$/;
+		
+		//需求2：密码验证 只能为6位数字
+		var pat1 = /^\d{6}$/;
+		
+		//需求3：性别验证 只能为男/女/人妖
+		var pat1 = /^(男|女|人妖)$/;
+		
+		//需求4：昵称验证，第一个字符必须为字母，其余可以为数字/字母/_,长度至少6位
+		var pat1 = /^[a-zA-Z][a-zA-Z0-9_]{5,}$/;
+		
+		//需求5：手机号验证 
+		//第一位：1  第二位：35789 第三位以后：0-9 长度为11位
+		var  pat1 = /^[1][35789][0-9]{9}$/;
+		
+		//需求6：邮箱验证（qq，163,126，sina） 
+		//有数字/字母下划线 长度6-11
+		var pat1 = /^[a-zA-Z0-9_]{6,11}(@qq.com|@163.com|@126.com|@sina.com)$/;
+		
+		//练习需求7：
+		//1）网站首页：网址
+		//2）图片名格式：（png/gif/jpeg)
+		
+		//2）定义正则对象（传递表达式）
+		var reg1 = new RegExp(pat1);
+		txt1_obj.onblur = function(){
+		//3）检验值是否符合正则规范
+		console.log(reg1.test(txt1_obj.value));
+		}
+	</script>
+</body>
+</html>

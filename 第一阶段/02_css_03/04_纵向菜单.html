@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.nav{
+		border:1px solid #ccc;
+		width: 200px;
+		list-style: none;
+		/* 去除左内间距 */
+		padding-left: 0;
+		background: #E7E6E6;
+	}
+	.nav .title{
+		background:#999696;
+	}
+	.nav li{
+		border-bottom: 1px solid #ccc;
+		line-height: 40px;
+		text-align: center;
+	}
+	.nav a{
+		color: black;
+		text-decoration: none;
+	}
+	.nav .li_1{
+		background: url(img/ic1.gif) no-repeat 20px center;
+	}
+	.nav .li_2{
+		background: url(img/ic2.gif) no-repeat 20px center;
+	}
+	.nav .li_3{
+		background: url(img/ic3.gif) no-repeat 20px center;
+	}
+	.nav .li_4{
+		background: url(img/ic4.gif) no-repeat 20px center;
+	}
+	.nav .li_5{
+		background: url(img/ic5.gif) no-repeat 20px center;
+	}
+	.nav .li_6{
+		background: url(img/ic6.gif) no-repeat 20px center;
+	}
+
+	/* 鼠标经过li背景图右移 文字变红 */
+	.nav li:hover{
+		background-position:30px center;	
+	}
+	/* 鼠标经过li,li里边的a变红色 */
+	.nav li:hover a{
+		color: red;
+	}
+	
+	</style>
+</head>
+<body>
+	<ul class="nav">
+		<li class="title">纵向菜单</li>
+		<li class="li_1"><a href="#">新闻</a></li>
+		<li class="li_2"><a href="#">电影</a></li>
+		<li class="li_3"><a href="#">足球</a></li>
+		<li class="li_4"><a href="#">休闲</a></li>
+		<li class="li_5"><a href="#">旅游</a></li>
+		<li class="li_6"><a href="#">家居</a></li>
+	</ul>
+</body>
+</html>

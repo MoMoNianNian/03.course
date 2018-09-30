@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.imgBox .imgs img{width: 1500px;display: none;}
+		.imgBox .imgs img.current{display: block}
+		.imgBox{width: 1500px;position: relative;}
+		.box2{
+			width: 380px;
+			height: 530px;
+			/* width: 1200px;
+			height: 530px; */
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.box_2{
+			width: 380px;
+			height: 530px;
+			background: rgba(20,112,162,0.5);
+			line-height: 70px;
+			font-size: 40px;
+			float: left;
+			/* display: none; */
+		}
+	
+
+
+		.smallImg{
+			position: absolute;
+			bottom:50px;
+			right:50px;
+		}
+		.box_3{
+			display: block;
+			width: 66px;
+			height: 70px;
+			text-align: center;
+			float: right;
+			margin-left: 10px;
+			color: white;
+			font-size: 14px;
+		}
+		.img1{
+			border: 3px white solid;
+			border-radius: 20px;
+			width: 60px;
+			height: 60px;
+		}
+	</style>
+		<script src="jq/jquery-1.4.js"></script>
+	<script>
+	$(function(){
+		$(".box_2").hide().first().show()
+		$(".smallImg img").hide().first().show()
+		$(".box_3").click(function() {
+			$(".box_2").eq($(this).index()).show().siblings().hide()
+			$(".smallImg img").eq($(this).index()).show().siblings().hide()
+			$(this).find("img").css("borderColor","blue")
+			$(this).siblings().find("img").css("borderColor","white")
+		})
+	})
+	</script>
+	
+</head>
+<body>
+	<div class="imgBox">
+		<div class="imgs">
+			
+			<img src="hero/b_1.jpg" alt="#" >
+			<img src="hero/b_2.jpg" alt="#" >
+			<img src="hero/b_3.jpg" alt="#" >
+			<img src="hero/b_4.jpg" alt="#" >
+			<img src="hero/b_5.jpg" alt="#" >
+			<img src="hero/b_6.jpg" alt="#" >
+			<img src="hero/b_7.jpg" alt="#" >
+			<img src="hero/b_8.jpg" alt="#" class="current">
+		</div>
+		
+		<div class="box2">
+			<div class="box_2"><br>李白<br>青莲剑仙<br>一篇诗，一斗酒，一曲长歌，一剑天涯</div>
+			<div class="box_2"><br>曹操<br>鲜血枭雄<br>宁叫我负天下人</div>
+			<div class="box_2"><br>狄仁杰<br>断案大师<br>以陛下的名义，你被捕了</div>
+			<div class="box_2"><br>妲己<br>魅惑之狐<br>为什么会痛苦，一直微笑就好了</div>
+			<div class="box_2"><br>大乔<br>伊势巫女<br>守望着天空，大海，和你的回忆。</div>
+			<div class="box_2"><br>庄周<br>逍遥梦幻<br>蝴蝶是我，我就是蝴蝶，一群人在人家梦里打来打去，有意思吗</div>
+			<div class="box_2"><br>安琪拉<br>暗夜萝莉<br>生命就像人家的魔法书，涂涂改改又是一年</div>
+			<div class="box_2"><br>鲁班七号<br>机关造物<br>鲁班大师，智障250，膜拜，忌惮膜拜。</div>
+		</div>
+			
+		
+		<div class="smallImg">
+			
+			<span class="box_3"><img src="hero/s_1.jpg" class="img1" >鲁班七号</span>
+			<span class="box_3"><img src="hero/s_2.jpg" class="img1" >安琪拉</span>
+			<span class="box_3"><img src="hero/s_3.jpg" class="img1" >庄周</span>
+			<span class="box_3"><img src="hero/s_4.jpg" class="img1" >大乔</span>
+			<span class="box_3"><img src="hero/s_5.jpg" class="img1" >妲己</span>
+			<span class="box_3"><img src="hero/s_6.jpg" class="img1" >狄仁杰</span>
+			<span class="box_3"><img src="hero/s_7.jpg" class="img1" >曹操</span>
+			<span class="box_3"><img src="hero/s_8.jpg"class="img1" >李白</span>
+	
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,181 @@
+/*
+* @Author: Administrator
+* @Date:   2018-08-06 16:40:21
+* @Last Modified by:   Administrator
+* @Last Modified time: 2018-08-07 15:16:00
+*/
+/* 初始化页面 */
+*{margin:0;padding:0;}
+a{text-decoration: none;color:#444;}
+
+
+/*公共类 */
+.overflowH{overflow: hidden;}
+.leftbox{float: left;}
+.rightbox{float: right;}
+.autoW{width:1000px;margin:0 auto;}
+
+/* 头部 */
+/* header_top */
+.header_top{
+	border:1px solid red;
+	background: #F5F5F5;
+}
+.header_top .con{
+	border:1px solid blue;
+	line-height: 38px;
+}
+.header_top .con .left{
+	border:1px solid orange;
+}
+.header_top .con .right{
+	border:1px solid green;
+}
+/* header_center */
+.header_center{
+	border:1px solid blue;
+}
+.header_center img{
+	/* border:1px solid red; */
+	margin-top:21px;
+}
+.header_center .nav{
+	border:1px solid orange;
+	line-height: 85px;
+}
+.header_center .nav a{
+	font-size: 20px;
+	/* border:1px solid red; */
+	margin-left:50px;
+}
+/* 交集选择器 */
+.header_center .nav a.current{
+	color:#168D79;
+}
+
+/* header_bottom */
+.header_bottom{
+	border:1px solid red;
+	height: 130px;/*完全显示背景图*/
+	background: url(../images/bg01.png);
+}
+/*  *:通配  所有文本颜色 */
+.header_bottom *{color: #7EDACD;}
+.header_bottom a.current{
+	color: white;
+	text-decoration: underline;
+}
+.header_bottom .con{
+	border:1px solid blue;
+}
+.header_bottom .con .row_1{
+	border:1px solid yellow;
+	line-height: 52px;
+}
+
+.header_bottom .con .row_2{
+	border:1px solid orange;
+	margin-top: 20px;
+}
+.header_bottom .con .row_2 span{
+	font-size: 30px;
+	font-weight: bold;
+	color: white;
+}
+.header_bottom .con .row_2 p{
+	font-size: 18px;
+	line-height: 42px;
+}
+
+/* 内容区 content*/
+.content{
+	border:5px solid green;
+	background: #F5F5F5;
+}
+.content .rows{
+	border:3px solid blue;
+	margin-top: 40px;
+}
+.content .rows .list{
+	background: white;
+
+}
+.content .rows .list li{
+	float: left;
+	/* outline:1px solid purple; */
+	width: 25%;
+	height: 175px;
+	list-style:none;
+}
+.list .article h4,.list .article p{
+	margin-left:18px;
+	margin-right:18px;
+}
+.content .rows .list  h4{
+	font-size: 16px;
+	line-height: 54px;
+}
+.content .rows .list  p{
+	font-size: 14px;
+	color: #686868;
+}
+.content .rows .list  p.icon{
+	text-align: right;
+	margin-top: 30px;
+}
+
+/* hr自带有上下左右边框 */
+.line{
+	border:0;
+	border-top:1px solid #DDDDDD;
+	margin:40px 0;
+}
+.pages{
+	border:1px solid red;
+	text-align: center;
+	line-height:70px; 
+}	
+.pages a{margin:0 5px;font-weight: bold;}
+.pages a.current{color: #3CB572;}
+
+/* 底部footer */
+.footer{
+	border:3px solid orange;
+}
+
+.footer .links{
+	border:2px solid green;
+	padding:16px 0 30px;
+}
+.footer .links ul{
+	list-style: none;
+	border:1px solid blue;
+	line-height: 26px;
+	margin-right: 160px;
+}
+/* 第一行 */
+.footer .links ul li:first-child{
+	font-size: 20px;
+	line-height: 56px;
+}
+.footer .links .tel{
+	border:1px solid red;
+	text-align: right;
+	margin-top: 18px;
+}
+.footer .links .tel span{
+	font-size: 24px;
+	line-height: 36px;
+}
+
+.footer .copyRight{
+	border:2px solid red;
+	background: #F5F5F5;
+	line-height: 50px;
+	color: #9B9B9B;/*普通文字颜色*/
+}
+.footer .copyRight a{color: #67A99D;}
+
+
+
+

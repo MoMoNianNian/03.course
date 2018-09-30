@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+	//3) 写一个函数:
+	// 可以获取min和max之间的随机整数
+	// 50 - 70
+	// 30 - 80
+	// 10 - 50
+	//测试几组数据找规律
+	//Math.random() 0-1
+	//30-50   30 + (0-20)随机数
+	//20-70   20 + (0-50)随机数
+	//10-60   10 + (0-50)随机数
+	//min-max  min+(0-(max-min))随机数
+	
+function numRandom(min,max){
+	return Math.floor(min+Math.random()*(max-min));
+}
+console.log(numRandom(10,20));
+console.log(numRandom(40,90));
+console.log(numRandom(25,75));
+
+
+	/*var max=50, min=10;
+	document.write(Math.floor(Math.random()*(max-min)+min));*/
+	
+</script>
+	
+</body>
+</html>

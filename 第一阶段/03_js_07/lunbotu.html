@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{margin:0;padding:0;}
+	.imgBox{
+		border:1px solid red;
+		width: 700px;
+		position: relative;
+	}
+	.imgBox .imgs img{width: 700px;display: none;}
+	.imgBox .imgs img.current{display: block}
+	
+	.btns span{
+		display: block;
+		width: 70px;
+		height: 60px;
+		/* border:1px solid blue; */
+		position: absolute;
+		top: 50%;
+		margin-top: -30px;
+		font-size: 40px;
+		font-weight: bold;
+		text-align: center;
+		line-height: 60px;
+		color: white;
+		background: rgba(0,0,0,0.5);
+	}
+	.btns span.prev{
+		left: 0;
+	}
+	.btns span.next{
+		right: 0;
+	}
+	.points{
+		position: absolute;
+		left: 0;
+		width: 100%;
+		bottom: 10px;
+		text-align: center;
+	}
+	.points span{
+		width: 16px;height: 16px;
+		background: #efefef;
+		display: inline-block;
+		margin:0 4px;
+	}
+	.points span.current{
+		background: blue;
+	}
+	</style>
+</head>
+<body>
+	<div class="imgBox">
+		<div class="imgs">
+			<img src="img/b_1.jpg" class="current" >
+			<img src="img/b_2.jpg" >
+			<img src="img/b_3.jpg" >
+			<img src="img/b_4.jpg" >
+			<img src="img/b_5.jpg">
+		</div>
+		<div class="btns">
+			<span class="prev"><</span>
+			<span class="next">></span>
+		</div>
+		<div class="points">
+			<span class="current"></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+
+	</div>
+	<script>
+		var num=0;
+		var imgs=document.querySelectorAll('.imgs img');
+		console.log(imgs);
+		var perv_btn=document.querySelector('.btns .prev');
+		console.log(perv_btn);
+		var next_btn=document.querySelector('.btns .next');
+		console.log(next_btn);
+		var point=document.querySelectorAll('.points span');
+		console.log(point);	
+
+
+      next_btn.onclick=function(){
+      	num>=4?num=0:num++;
+      	showimg(num)
+      	showspan(num)
+      }
+
+      perv_btn.onclick=function(){
+      	num<=0?num=4:num--;
+      	showimg(num)
+      	showspan(num)
+      }
+
+
+
+		function showimg(){
+			for(var i=0;i<imgs.length;i++){
+				imgs[i].classList.remove("current");
+
+			}
+				imgs[num].classList.add("current");
+		}	
+
+	function showspan(){
+			for(var i=0;i<point.length;i++){
+				point[i].classList.remove("current");
+
+			}
+				point[num].classList.add("current");
+		}	
+
+</script>
+</body>
+</html>

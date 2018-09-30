@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	li{list-style: none; overflow: hidden;}
+	.list{
+		width: 600px;
+		border:1px solid red;
+		padding-left: 0;
+		list-style:square inside;
+	}
+	.list li{
+		line-height: 40px;
+		border-bottom: 1px dashed red;
+		/* padding-left: 10px; */
+		color: #736F6F;
+	}
+	.list li span{
+		float: right;
+		/* margin-right: 10px; */
+	}
+	.list li a{
+		/* border:1px solid green; */
+		/* margin-left:-20px; */
+		color:#321BBB;
+		float: left;
+	}
+
+	/* 最后一行li去掉下边框 */
+	.list li:last-child{
+		border-bottom: 0;
+	}
+
+	</style>
+</head>
+<body>
+	<!-- ul>li*5>a[href=#]+span{2011-02-21} -->
+	<ul class="list">
+		<li><a href="#">零距离与猛兽紧密接触</a><span>2011-02-21</span></li>
+		<li><a href="#">新西兰旅游资讯:花园城市基督城</a><span>2011-02-21</span></li>
+		<li><a href="#">游客入境澳大利亚</a><span>2011-02-21</span></li>
+		<li><a href="#">新西兰旅游资讯</a><span>2011-02-21</span></li>
+		<li><a href="#">花园城市基督城</a><span>2011-02-21</span></li>
+	</ul>
+</body>
+</html>

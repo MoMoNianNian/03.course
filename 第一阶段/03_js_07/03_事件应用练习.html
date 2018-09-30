@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="">
+		用户名：<input type="text" name="uName" value="请输入用户名"><br>
+		密码：<input type="password" name="uPassword"  value="请输入密码"><br>
+	</form>
+	<script>
+	//用户名
+	//获得焦点：添加浅黄色背景，文字颜色是蓝色
+	//失去焦点：去掉背景色，文字颜色是黑色
+	var userName = document.querySelector("input[name=uName]");
+	var userPassword = document.querySelector("input[name=uPassword]");
+	console.log(userName);
+	console.log(userPassword);
+
+	console.log(userName.value);
+	console.log(userName.background);
+ 	userName.onfocus = function(){
+		userName.style.background="#E9DA93";
+		userName.style.color="blue";
+	}
+	userName.onblur = function(){
+		userName.style.background="";
+		userName.style.color="black";
+	}
+
+
+	
+	//密码：
+	//获得焦点：紫色边框
+	//失去焦点：灰色边框
+	console.log(userPassword.value);
+	userPassword.onfocus = function(){
+		userPassword.style.border="1px solid #9C03DB";
+	}
+	userPassword.onblur = function(){
+		userPassword.style.border="1px solid #7F7882";
+	}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	input{
+		outline: none;
+	}
+	.form1{
+		border:1px solid red;
+		width: 400px;
+		line-height: 40px;
+	}
+	.form1 label{
+		color: blue;
+		font-weight: bold;
+	}
+	.form1 .uname{
+		width: 160px;
+		background: #FBF2B8;
+	}  
+	.form1 .upass{
+		width: 160px;
+		background: #B8FBD2;
+	}  
+
+	.form2{
+		border:1px solid green;
+		width:400px;
+		line-height: 46px;
+	}
+	.form2 label{
+		color: purple;
+		font-weight: bold;
+		font-style: italic;
+	}
+	.form2 .uname{
+		width: 200px;
+		border:2px solid red;
+	}
+	.form2 .upass{
+		width: 200px;
+		border:2px solid blue;
+	}
+
+
+	</style>
+</head>
+<body>
+	<!-- 需求: 去掉蓝色边框(外发光)
+	[登录表单]
+	红色边框 宽400px
+	行高 40
+	文字:蓝色 加粗
+	用户名输入框:宽160  背景色浅黄色
+	密码输入框:宽160 背景色浅绿色
+	-----------------------------------
+	[注册表单]
+	绿色边框 宽400px
+	行高 46
+	文字:紫色 加粗 倾斜
+	用户名输入框:宽200 边框2px 实线 红色
+	密码输入框:宽200 边框2px 实线 蓝色
+ -->
+
+
+	<form action="" class="form1">
+		<p>
+			<label>用户名</label>
+			<input type="text" class="uname">
+		</p>
+		<p>
+			<label>密&nbsp;&nbsp;&nbsp;码</label>
+			<input type="password" class="upass">
+		</p>
+		<p>
+			<input type="submit" value="登录">
+		</p>
+	</form>
+
+	<form action="" class="form2">
+		<p>
+			<label>用户名</label>
+			<input type="text" class="uname">
+		</p>
+		<p>
+			<label>密&nbsp;&nbsp;&nbsp;码</label>
+			<input type="password" class="upass">
+		</p>
+		<p>
+			<input type="submit" value="注册">
+		</p>
+	</form>
+
+
+</body>
+</html>

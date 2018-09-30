@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin:0;padding:0;}
+		.box{
+			width: 1200px;
+			border: 1px solid red;
+			margin: 30px;
+			position: relative;/* 相对定位 */
+			height: 530px;/* 需删 */
+		}
+		/* 小图区域 */
+		.box .small_box{
+			border: 1px solid green;
+			position: absolute;
+			right: 0px;
+			bottom: 10px;
+		}
+		.box .small_box img{
+			margin: 4px 5px;
+		}
+		/* 遮罩层区域 */
+		.box .mask{
+			width: 300px;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: rgba(0, 0, 0, 0.5);
+			color: white;
+			font-size: 20px;
+			text-align: center;
+			line-height: 36px;
+		}
+
+
+	</style>
+	<script src="jq/jquery-1.4.js"></script>
+	<script>
+		$(function(){
+			//1)模拟图文数据 
+			//0:名字 1:昵称 2:口头禅 3:小图 4:大图
+			var arr = [
+				['鲁班七号','机关造物','鲁班大师，智障250，膜拜，忌惮膜拜。','s_1.jpg','b_1.jpg'],
+				['安琪拉','暗夜萝莉','生命就像人家的魔法书，涂涂改改又是一年','s_2.jpg','b_2.jpg'],
+				['庄周','逍遥梦幻','蝴蝶是我，我就是蝴蝶，一群人在人家梦里打来打去，有意思吗?','s_3.jpg','b_3.jpg']
+			
+			];
+			//2)初始状态：显示相关的信息
+			
+			var imgs = '';//存储小图
+			for(key in arr){//小图 arr[key][3]
+				imgs +="<img src='image/"+arr[key][3]+"'>";
+
+			}console.log(imgs);
+			$(".box .small_box").html(imgs);
+			
+
+			function show(index){
+				$('.box>img').attr('src','image/'+arr[index][4]);
+				$(".mask .nick").html(arr[index][1]);
+				$(".mask .uname").html(arr[index][0]);
+				$(".mask .speak").html(arr[index][2]);
+			}
+			
+			show(0);
+			//单击小图 切换对应信息
+			$(".box .small_box img").click(function(event){
+				// console.log($(this).index());
+				// console.log(arr[$(this).index()]);
+				show($(this).index());
+				
+			})
+
+
+
+
+		})
+	</script>
+</head>
+<body>
+	<div class="box">
+		<!-- 大图（1） -->
+		<img src="">
+		<!-- 小图 （所有小图）-->
+		<div class="small_box"></div>
+		<!-- 遮罩层（文本内容） -->
+		<div class="mask">
+			<p class="nick"></p>
+			<p class="uname"></p>
+			<p class="speak"></p>
+			
+		</div>
+	</div>
+	
+</body>
+</html>

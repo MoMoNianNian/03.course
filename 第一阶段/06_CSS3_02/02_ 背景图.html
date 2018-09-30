@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin:0;padding:0;}
+		.box1{
+			width: 300px;
+			height: 300px;
+			border: 10px dashed red;
+			padding: 20px;
+			margin: 30px;
+			/* 添加背景 */
+			background: #F5F6C3 url('css3/06-背景/images/bg.jpg') no-repeat ;
+			/* 参考原点位置 */
+			background-origin:padding-box;
+			/* 大小 */
+			background-size:100%;
+			/* 裁切 */
+			background-clip: content-box;
+		}
+
+		.box1 p{
+			border: 1px solid blue;
+			width: 120px;
+			height: 100px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<p>
+			背景图修饰
+		</p>	
+	</div>
+</body>
+</html>

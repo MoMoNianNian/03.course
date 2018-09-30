@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jq/jquery-1.4.js"></script>
+	<style>
+	.box1{
+		margin:0 auto;
+		margin-top: 100px;
+		width: 1500px;height: 700px;
+		border: 1px solid red;
+		position: relative;
+	}
+	.box1 .leftbox{
+		width: 400px;height: 700px;
+		border: 1px solid blue;
+		background-color: rgba(52,69,85,0.5);
+		text-align: center;
+		position: absolute;left: 0;top: 0;
+	}
+	.box1 p{font-size: 34px;margin-top: 300px;}
+	.box1 .picbox span{display: inline-block;width: 96px;height: 120px;}
+	.box1 .picbox span a{text-decoration: none;color: white;}
+	.box1 .picbox img{border: 1px solid white;margin-left: 1px;margin-top: 1px;}
+	.box1 .small1{
+		position: absolute;
+		bottom: 50px;right: 420px;
+	}
+	.box1 .small2{
+		position: absolute;
+		bottom: 50px;right: 320px;
+	}
+	.box1 .small3{
+		position: absolute;
+		bottom: 50px;right: 220px;
+	}
+	.box1 .small4{
+		position: absolute;
+		bottom: 50px;right: 120px;
+	}
+	</style>
+</head>
+<body>
+<div class="box1">
+	<img src="hero/b_8.jpg" height="700" width="1500">
+	<img src="hero/b_1.jpg" height="700" width="1500">
+	<img src="hero/b_3.jpg" height="700" width="1500">
+	<img src="hero/b_6.jpg" height="700" width="1500">
+	<div class="leftbox">
+	<p><b>青莲剑仙<br>		
+		一篇诗，一斗酒，一曲长歌，一剑天涯</b></p>
+	<p><b>鲁班大师<br>		
+		鲁班大师，智障250，膜拜，忌惮膜拜</b></p>
+	<p><b>庄周<br>		
+		 一群人在人家梦里打来打去，有意思吗</b></p>
+	<p><b>狄仁杰<br>		
+		以陛下的名义，你被捕了</b></p>
+	</div>
+	<div class="picbox">
+	<span class="small1"><img src="hero/s_8.jpg" height="90" width="90"><br>&nbsp;<a href="#"><b>凤求凰</b></a></span>
+	<span class="small2"><img src="hero/s_1.jpg" height="90" width="90"><br>&nbsp;<a href="#"><b>鲁班七号</b></a></span>
+	<span class="small3"><img src="hero/s_3.jpg" height="90" width="90"><br>&nbsp;&nbsp;<a href="#"><b>庄周</b></a></span>
+	<span class="small4"><img src="hero/s_6.jpg" height="90" width="90"><br>&nbsp;<a href="#"><b>狄仁杰</b></a></span>
+	</div>
+</div>	
+<script>
+$(function(){
+	$(".box1>img").hide();
+	$(".box1>img:first").show();
+	$(".leftbox p").hide();
+	$(".leftbox p:first").show();
+	$(".picbox span img").css('border', '');
+	$(".picbox span img:first").css('border','2px solid #489DAF');
+	$(".picbox span").click(function(){
+		console.log($(this).index());
+		$(".box1>img").hide();
+		$(".box1>img").eq($(this).index()).show();
+		$(".leftbox p").hide()
+		$(".leftbox p").eq($(this).index()).show();
+		$(".picbox span img").css('border', '');
+		$(".picbox span img").eq($(this).index()).css('border','2px solid #489DAF');
+	})
+	$(".picbox span a").click(function(){
+		$(".box1>img").hide();
+		$(".box1>img").eq($(this).index()).show();
+		$(".leftbox p").hide()
+		$(".leftbox p").eq($(this).index()).show();
+		$(".picbox span img").css('border', '');
+		$(".picbox span img").eq($(this).index()).css('border','2px solid #489DAF');
+	})
+})
+</script>
+</body>
+</html>

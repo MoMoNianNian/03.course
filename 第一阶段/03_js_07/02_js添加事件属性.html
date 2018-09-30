@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box{
+			width: 300px;height: 300px;
+			border: 2px solid red;
+		}
+	</style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+//1)获取div标签
+	var div_obj = document.getElementById('box');
+	console.log(div_obj);
+//2)单击div：添加一个天蓝色的背景色
+	div_obj.onclick = function(){
+		div_obj.style.background="skyblue";
+	}
+//3)双击div：添加文本内容
+	div_obj.ondblclick =addContent ;
+//自定义函数：执行添加内容操作
+	function addContent(){
+		div_obj.innerHTML = "<a href='#'>首页</a>"
+	}
+</script>	
+</body>
+</html>

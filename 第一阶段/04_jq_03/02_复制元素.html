@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jq/jquery-1.4.js"></script>
+	<script>
+		$(function(){
+			//单击增加按钮：复制p，添加到增加按钮之前
+			//最多只能填写6项工作经验
+			$("input[name=addBtn]").click(function() {
+				if($(".box1 p").length<6){
+					$(".box1 p:first").clone().insertBefore($("input[name=addBtn]"));
+					order();
+				}
+				
+			});
+
+			//单击删除按钮，删除一条经验
+			//至少保留一条
+			$("input[name=delBtn]").click(function(event) {
+				if($(".box1 p").length>1){//至少一条
+					$(".box1 p:last").remove();
+				}
+			});
+
+		
+			//定义一个函数，分配序号
+			function order(){
+				for(var i=0;i<$('.box1 p').length;i++){
+					$(".box1 p").eq(i).children('label').html("工作经验"+(i+1)+"：");
+				}
+			}
+
+			order();
+
+
+
+
+
+		})
+
+	</script>
+</head>
+<body>
+	<div class="box1">
+		<p>
+			<label>工作经验：</label>
+			<textarea></textarea>
+		</p>
+		<input type="button" name="addBtn" value="增加">
+		<input type="button" name="delBtn" value="删除">
+	</div>
+	
+</body>
+</html>

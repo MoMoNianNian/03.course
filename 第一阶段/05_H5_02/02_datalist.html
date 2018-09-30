@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	/* 隐藏折叠三角 */
+		input::-webkit-calendar-picker-indicator{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<!-- 数据列表datalist
+		定义一次
+		可以有多个载体 -->
+	<datalist id="list1">
+		<option>花瓣网</option>
+		<option>花神</option>
+		<option>锦觅</option>
+		<option>仙上</option>
+		<option>花天酒地</option>
+	</datalist>
+	<!-- 显示到页面上：需要借助于文本输入框（载体） -->
+	<input type="text" list="list1">
+</body>
+</html>

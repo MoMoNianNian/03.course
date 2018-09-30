@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  #box1{
+    border:1px solid red;
+    height: 400px;width: 400px;
+  }
+  </style>
+</head>
+<body>
+<div id='box1'></div>
+<input type="button" value='点击'> 
+
+<script>
+  var div_obj = document.querySelector('#box1');
+  var button = document.querySelector('input[type=button]');
+ //1)修改DIV的样式
+  function css(){
+    div_obj.style.background = 'pink';
+    div_obj.style.margin = '10px';
+  }
+ //2)修改内容
+  function text(){
+    div_obj.innerHTML = "<a href=#>国庆节</a>";
+  }
+ //3)清空div盒子
+  function empty(){
+    div_obj.innerHTML = '';
+  }
+ // 添加事件处理函数
+  button.addEventListener('click',css);
+  button.addEventListener('click',text);
+ //取消绑定/移除某个事件处理函数
+  button.removeEventListener('click',text);
+</script>
+</body>
+</html>

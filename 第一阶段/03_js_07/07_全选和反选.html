@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{margin:0;padding:0;}
+	ul,li{list-style: none;}
+	.list{
+		margin:20px;
+		line-height: 30px;
+	}
+
+	</style>
+</head>
+<body>
+	<ul class="list">
+		<li><h3>2018年我的愿望</h3></li>
+		<li><input type="checkbox" class="allcheck"> 全选</li><!-- //name="all" -->
+		<li><input type="checkbox" class="onecheck"> 钱包鼓一点</li>
+		<li><input type="checkbox" class="onecheck"> 体重轻一点</li>
+		<li><input type="checkbox" class="onecheck"> 工作轻松点</li>
+		<li><input type="checkbox" class="onecheck"> 旅游多一点</li>
+	</ul>
+	
+	<script>
+	//单击全选复选框：获取他的状态，添加给下面的一组复选框
+	
+	//1）获取复选框对象
+	var allcheck_obj = document.querySelector('.list .allcheck');//('input[name=all]')
+	console.log(allcheck_obj);	
+	var onecheck_obj = document.querySelectorAll('.list .onecheck');
+	console.log(onecheck_obj);	
+
+	//2)添加单击事件
+	allcheck_obj.onclick=function(){
+		console.log(allcheck_obj.checked);//true/forse
+			//循环遍历组合里的选项，修改状态
+			for(key in onecheck_obj){
+		onecheck_obj[key].checked=this.checked;//=allcheck_obj.checked;/=e.checked;
+	}
+}
+
+	</script>
+</body>
+</html>

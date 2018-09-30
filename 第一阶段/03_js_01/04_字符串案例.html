@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script> 
+	// 案例1：给一个输入框，输入姓名
+	var username=prompt("输入姓名");
+	// 显示输入姓名
+	console.log(username);
+	// 输出姓名的长度 
+	console.log(username.length);
+	// 检测姓名里是否有@
+	console.log(username.lastIndexOf('@'));  
+	   
+
+	// 案例2：给一个输入框，输入密码
+	var userpass=prompt("输入密码");
+	// 显示输入密码
+	console.log(userpass);
+	// 输出密码的长度
+	console.log(userpass.length);
+	// 输出的密码全是大写字母
+	console.log(userpass.toUpperCase());
+
+	// 直接输出值
+	document.write("用户名是："+username);
+	document.write("<hr>");
+	document.write("<p>我的用户名是："+username+"</p>");
+	document.write("<p>我的密码是："+userpass+"</p>");
+
+	// 变量里值拼接
+	var mytel="18262881005";
+	var myaddress="江苏省镇江市";
+	var myschool="江苏理工学院";
+	
+	// 存储：拼接成一个列表，并且输出
+	//list= list+"<li>联系方式：18262881005</li>"
+	var list="<ul>";
+		list+="<li>联系方式："+mytel+"</li>";
+		list+="<li>家庭住址："+myaddress+"</li>";
+		list+="<li>就读学校："+myschool+"</li>";
+		list+="</ul>"
+		document.write(list);
+
+
+document.write(list);
+	</script>
+
+	<!-- <ul>
+		<li>联系方式：18262881005</li>
+		<li>家庭住址：江苏省镇江市</li>
+		<li>就读学校：江苏理工学院</li>
+	</ul> -->
+	
+</body>
+</html>

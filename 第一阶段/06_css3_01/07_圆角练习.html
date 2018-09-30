@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.item{
+			width: 220px;
+			height: 220px;
+			background: #CEC8C8;
+			margin: 20px;
+			border: 1px solid blue;
+			/* flex布局，新型布局方式 */
+			display: flex;
+		}
+		.border-radius{
+			width: 200px;
+			/* height: 200px; */
+			margin: auto;
+
+			/* border: 1px solid red; */
+			border-top: 100px solid white;
+			border-bottom: 100px solid black;
+			border-radius: 100px; /* 圆角 */
+			/* 相对定位：设置参照对象 */
+			position: relative;
+		}
+
+		/* 在大圆里添加两个小圆，根据大圆来定位 */
+		.border-radius::after{
+			content: "";
+			background:white ;
+			width: 20px;
+			height: 20px;
+			border:40px solid black;
+			position: absolute;
+			left: 0;top:-50px;
+			border-radius: 100%; /* 圆角 */
+
+		}
+		.border-radius::before{
+			content: "";
+			background:black ;
+			width: 20px;
+			height: 20px;
+			border:40px solid white;
+			position: absolute;
+			left: 100px;top:-50px;
+			border-radius: 100%; /* 圆角 */
+			
+		}
+	
+		.imss{
+			width: 220px;
+			height: 220px;
+			background: #CEC8C8;
+			margin: 20px;
+			border: 1px solid blue;
+			/* flex布局，新型布局方式 */
+			display: flex;
+		}
+
+		.imss .border{
+			width: 150px;
+			height: 80px; 
+			margin: auto;
+			background-color: red;
+			border-radius: 10px; 
+			position: relative; 
+			
+		}
+		.imss .border::before{
+			content: "";	
+			position: absolute;
+			left:-20px;top:15px;
+
+			width: 0px;
+			height: 0px;
+			border: 10px solid transparent;/* 边框设透明 */
+			border-right-color:red;/* 右边框添加颜色 */
+		}
+
+	</style>
+</head>
+<body>
+	<!-- 太极图 -->
+	<div class="item">
+		<div class="border-radius"></div>
+	</div>
+	<!-- 信息框 -->
+	<div class="imss">
+		<div class="border"></div>
+	</div>
+</body>
+</html>

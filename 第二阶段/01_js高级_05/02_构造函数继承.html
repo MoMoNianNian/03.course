@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+//需要一个动物类 ：原型
+function Animal(){
+    //属性 物种类别
+    this.spacies = '动物';
+}
+
+//需要一个猫类 ：原型
+//蓝猫 橘猫 暹罗 虎斑美短（实例）
+function Cat(name,color){
+// 属性
+  this.name = name;
+  this.color = color;
+  //继承动物类（拷贝相关属性和方法）
+  //父类.apply(子类[,传递相关参数argument])
+  Animal.apply(this);
+}  
+  
+//需要一个犬类:原型
+//二哈 阿拉斯加 柯基 柴犬（实例）
+function Dog(name,color){
+// 属性
+  this.name = name;
+  this.color = color;
+  //拷贝继承父类
+  Animal.apply(this);
+}   
+
+
+//从猫类里边创建一个实例：第一只猫
+var cat1 = new Cat('总统','灰色');
+console.log(cat1);
+console.log(cat1.spacies);//动物
+  
+//从犬类里边创建一个实例：第一只狗
+var dog1 = new Dog('二哈','黑白色');
+console.log(dog1);//Dog {name: "二哈", color: "黑白色", spacies: "动物"}
+dog1.spacies = '陆地动物';
+console.log(dog1);//Dog {name: "二哈", color: "黑白色", spacies: "陆地动物"}
+console.log(dog1.spacies);  //陆地动物 
+
+var dog2 = new Dog('柯基','黄白色');
+console.log(dog2);//Dog {name: "柯基", color: "黄白色", spacies: "动物"}
+console.log(dog2.spacies);////动物
+</script>  
+</body>
+</html>

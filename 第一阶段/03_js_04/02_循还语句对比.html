@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+//输出1-5之间的整数
+//1）for循还
+	for(var n=1;n<=5;n++){
+		document.write(n+"===>");
+	}document.write("<hr color=red>");
+
+//2）while循还
+var n=1;
+while(n<=5){
+	document.write(n+"===>");
+	n++
+}document.write("<hr color=blue>");
+
+//3）do..while循还	
+
+	var n=1;
+		do{document.write(n+"===>");
+			n++;
+		}while(n<=5);
+document.write("<hr color=green>");
+//4）do..while语句	
+	var n=6;
+		do{document.write(n+"===>");
+			n++;
+		}while(n<=5);
+document.write("<hr color=green>");//6==> 先执行后判断
+</script>	
+</body>
+</html>

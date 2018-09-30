@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+//需求1：输出1-10之间的数
+//使用条件筛选 加break关键字
+//y遇到break 语句结束，跳出整个流程语句
+for(var n=1;n<=10;n++){
+	if(n==5){
+		break;
+	}
+	document.write(n+'-->');
+}
+//1-->2-->3-->4-->
+
+document.write('<hr>');
+
+//需求2：加continue关键字
+//略过本次循环，直接进入下一次循环	
+for(var n=1;n<=10;n++){
+	if(n==5){
+		continue;
+	}
+	document.write(n+'-->');
+}
+//1-->2-->3-->4-->6-->7-->8-->9-->10-->
+document.write('<hr>');
+//需求3：输出1+2+3+...+100的第一个大于等于2000的和
+for(var n=1,sum=0;n<=100;n++){
+	sum+=n;
+	if(sum>=2000){
+		document.write(sum);
+		break;
+	}
+	
+}
+
+
+</script>	
+</body>
+</html>

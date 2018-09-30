@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<progress value="10" max=100></progress>
+	<!-- 需求：进度条从0加载到100，加载完成，跳转页面
+	结合js实现  
+	value从0加到100的过程：时间（计时器）-->
+	<script>
+		//1）定义函数：获取value，加步长(+1)
+		 function loading(){
+		 	var pro=document.querySelector('progress');
+		 	//console.log(pro.value);
+		 	//修改值 值+1
+		 	if(pro.value === 100){
+		 		window.location = '01_H5页面.html';
+		 	}
+		 	pro.value +=5;
+		 }
+		loading()
+		//2）计时器控制时间
+		setInterval(loading,1000)
+		
+
+
+	</script>
+</body>
+</html>

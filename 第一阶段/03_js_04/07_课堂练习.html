@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.left{float: left;
+			font-size:14px;
+			background-color: red;
+			 }
+	.left a{text-decoration: none;}
+	</style>
+}
+</head>
+<body>
+<script>
+//输出一个省份下拉列表，默认选项是江苏省
+var proArr = ['安徽省','湖南省','浙江省','海南省','湖北省','江苏省','武汉省'];
+document.write("<select>");
+for(var i=0;i<=proArr.length-1;i++){
+	if(i==5){
+		document.write("<option selected>"+proArr[i]+"</option>");
+	}else{
+		document.write("<option>"+proArr[i]+"</option>");
+	}
+
+}
+
+document.write("</select>");
+
+//
+var proArr = ['安徽省','湖南省','浙江省','海南省','湖北省','江苏省','武汉省'];
+document.write("<select>");
+for(key in proArr){//key是下标 proArr[key]省份
+	if(proArr[key]=='江苏省'){//加selected
+		document.write("<option selected value="+key+">"+proArr[key]+"</option>");
+	}else{
+		document.write("<option> value="+key+">"+proArr[key]+"</option>");
+	}
+
+}
+
+document.write("</select>");
+
+
+//练习2：
+//输出一个导航条，第一个加上红色背景色
+//导航条效果，文字14px，链接没有下划线，大小自定
+var navArr = ['首页','公司新闻','公司动态','招聘信息','友情链接','发展历程'];
+document.write("<p class='left'>");
+for(var n=0;n<=navArr.length-1;n++){
+	document.write("<a href='#'>"+navArr[n]+"</a>");
+}
+document.write("</p>");
+
+//课下练习：
+//1）九九乘法口诀表
+//2）拓展：倒金字塔
+//3）百钱买百鸡：100元买100只鸡
+//公鸡5元一只，母鸡3元一只，小计1元3只，
+//问能买公鸡，小鸡，母鸡各多少只？几种买法?
+
+
+
+
+
+
+
+
+</script>	
+</body>
+</html>

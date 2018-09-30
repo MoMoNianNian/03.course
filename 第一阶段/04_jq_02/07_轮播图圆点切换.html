@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin:0;padding:0;}
+		.imgBox{
+			border:1px solid red;
+			width: 700px;
+			position: relative;
+		}
+		.imgBox .imgs img{width: 700px;display: none;}
+		.imgBox .imgs img.current{display: block}
+		
+		.points{
+			position: absolute;
+			left: 0;
+			width: 100%;
+			bottom: 10px;
+			text-align: center;
+		}
+		.points span{
+			width: 16px;height: 16px;
+			background: #efefef;
+			display: inline-block;
+			margin:0 4px;
+		}
+		.points span.current{
+			background: blue;
+		}
+	</style>
+	<script src="jq/jquery-1.9.1.min.js"></script>
+	<script>
+
+		$(function(){
+			$('.points span').click(function(ev){
+				console.log($(this).index());
+				$('.imgs img').eq($(this).index()).show().siblings().hide();
+				$('.points span').removeClass();
+				$('.points span').eq($(this).index()).addClass('current');
+					
+				});
+			})
+
+		
+		
+
+
+
+
+	</script>
+</head>
+<body>
+	<div class="imgBox">
+		<div class="imgs">
+			<img src="img/b_1.jpg" class="current" >
+			<img src="img/b_2.jpg" >
+			<img src="img/b_3.jpg" >
+			<img src="img/b_4.jpg" >
+			<img src="img/b_5.jpg" >
+		</div>
+		<div class="points">
+			<span class="current"></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+</body>
+</html>

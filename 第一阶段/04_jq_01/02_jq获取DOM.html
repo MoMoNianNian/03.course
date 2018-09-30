@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- 引入jq文件 -->
+	<script src="jq/jquery-1.9.1.min.js"></script>
+	<!-- 写自己的语句 -->
+	<script>
+		$(function(){
+			//加载DOM完成
+			//h3标题-->通过原生js语句
+			var h3_obj = document.getElementById('title');
+			console.log(h3_obj);
+			//h3标题-->通过jq语句
+			console.log($("h3"));
+			console.log($("#title"));
+			//input
+			console.log($("input[name=uname]"));
+			//ul标签
+			console.log($(".list"));
+			//ul li 标签
+			console.log($(".list li"));
+			//ul 里的第一个li
+			/*
+			console.log($(".list li:first-child"));
+			console.log($(".list li:last-child"));
+			console.log($(".list li:nth-child(2)"));
+			*/
+			console.log($(".list li:first"));
+			console.log($(".list li:last"));
+			console.log($(".list li:eq(3)"));
+			console.log($(".list li").eq(3));
+
+			//筛选偶数下标行
+		console.log($("ul li:even"));
+		//筛选奇数下标行
+		console.log($("ul li:odd"));	
+
+		});
+	</script>
+</head>
+<body>
+	<h3 id="title">用户注册</h3>
+	<input type="text" name="uname"><br><br>
+	<input type="password" name="upass"><br><br>
+
+	<ul class="list">
+		<li>花瓣网</li>
+		<li>百度</li>
+		<li>京东</li>
+		<li>淘宝</li>
+		<li>一品威客</li>
+	</ul>
+</body>
+</html>

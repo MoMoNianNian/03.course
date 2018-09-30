@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<ul type="disc">
+	<li class='li_1'>首页</li>
+	<li class='li_1'>京东</li>
+	<li name='nav'>淘宝</li>
+	<li name='nav'>天猫</li>
+</ul>	
+<ul type="circle">
+	<li id='li_2'>首页2</li>
+	<li id='li_2'>京东2</li>
+	<li>淘宝2</li>
+	<li>天猫2</li>
+</ul>	
+<ul type="square" class='list'>
+	<li id='li_2'>首页3</li>
+	<li id='li_2'>京东3</li>
+	<li>淘宝2</li>
+	<li>天猫2</li>
+</ul>	
+<script>
+//1)通过id找 唯一性 找到唯一的第一个
+var ele_1 = document.getElementById('li_2');
+console.log(ele_1);	
+//2）通过class [数组集合]
+var ele_2 = document.getElementsByClassName('li_1');
+console.log(ele_2);	//数组集合
+	console.log(ele_2[0]);//<li class='li_1'>首页</li>
+console.log(ele_2[1]);//<li class='li_1'>京东</li>
+//3）通过标签名 [数组集合]
+var ele_3 = document.getElementsByTagName('ul')
+console.log(ele_3);
+//3）通过name名 [数组集合]
+var ele_4 = document.getElementsByName('nav')
+console.log(ele_4);
+
+
+//通过CSS选择器获取
+var obj_1 = document.querySelector(".list li");
+console.log(obj_1);	//只要一个 第一个 
+
+var obj_2 = document.querySelectorAll(".list li");
+console.log(obj_2);//多个元素 [数组集合]
+
+
+
+</script>
+</body>
+</html>

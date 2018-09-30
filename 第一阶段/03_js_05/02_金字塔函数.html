@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+		<style>
+		.p1{
+			width: 200px;
+			border: 1px red solid;
+			text-align: center;
+		}
+		.p2{
+			width: 200px;
+			border: 1px red solid;
+			text-align: right;
+		}
+		.p3{
+			width: 200px;
+			border: 1px red solid;
+			text-align: left;
+		}				 
+		 
+	</style>
+</head>
+<body>
+<script>
+//写一个金字塔函数
+//可以随意设定层数
+//可以随意设定金字塔对齐方式，等腰，直角	
+
+function zjt(rows,i){
+	document.write('<p class="'+i+'">');
+for(var n=1;n<=rows;n++){  //循环行数
+	for(var m=1;m<=n*2-1;m++){ //循环*个数
+		document.write('*');
+	}document.write('<br>');
+}
+document.write('</p>');
+}
+
+zjt(2,"p1");
+zjt(3,"p2");
+zjt(4,"p3");
+
+//新闻列表显示成无序列表结构
+//要求：列表符号类型可以自己设定
+var newList = [
+'紧急通知',
+'“三八节”女性旅游乐享半价优惠',
+'暂停旅游社业务公告',
+'九华山门票恢复全价',
+'“三八”节短线游走俏',
+'4月初去动物园看羊驼',
+'安徽省旅游指委召开会议号召...'
+];	
+
+function bb(yy,cc,dd){
+	document.write("<ul type="+yy+">");
+for(var i=0;i<=newList.length-1;i++){ //for(key in newList)
+if(i%2==1){                           //if((Number(key)+1)%2 == 0)  //偶数行为0
+	document.write("<li style='color:"+cc+"'>"+newList[i]+"</li>");
+}else{
+	document.write("<li style='color:"+dd+"'>"+newList[i]+"</li>");
+}
+}document.write("</ul>");
+}
+bb("circle","blue","pink");
+bb("square","blue","pink");
+bb("disc","blue","pink");
+bb("none","blue","pink");
+
+
+function bb(yy,cc){
+	document.write("<ul type="+yy+">");
+for(key in newList){ 
+if((Number(key)+1)%2 == 0){  //偶数行为0
+	document.write("<li style='color:"+cc+"'>"+newList[key]+"</li>");
+}else{
+	document.write("<li>"+newList[key]+"</li>");
+}
+}document.write("</ul>");
+}
+bb("circle","blue");
+bb("square","pink");
+
+</script>	
+</body>
+</html>

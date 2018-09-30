@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+//一个函数名
+//1）传递两个值，求和运算
+//2）传递一个值，求幂运算（三次方）
+function jisuan(){
+  if(arguments.length == 2){
+    return arguments[0] + arguments[1]; 
+  }else if(arguments.length == 1){
+    return Math.pow(arguments[0],3);
+  }else{
+    console.log("该函数最多只能有2个参数");
+  }
+}
+console.log(jisuan(5));//125 求三次方
+console.log(jisuan(5,20));//125 求和
+
+
+</script>  
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	 <style>
+ 		div{
+		width: 200px;
+ 		height: 200px;
+ 		border: 1px solid black;
+ 	}
+	</style>
+
+</head>
+<body>
+<script>
+// 练习1：输出num1的值  50，输出num2的值 49
+ // var num1=30;
+ // 	num1+=20;
+ // 	num1--;
+ // var num2=num1++;
+
+
+
+// 练习2:输入一个年份，判断是闰年还是平年？
+// var year=prompt("输入年份");
+// if(year%4 != 0){
+// 	document.write("该年份不能被4整除，是平年");
+// }else if(year%400 == 0){
+// 	document.write("该年份能被400整除，是世纪闰年");
+// }else if(year%400 == 0){
+// 	document.write("该年份能被100整除");
+// }else{
+// 	document.write("该年份是普通闰年");
+// }
+
+// 1)能被4整除并且不能被100整除
+// 2）或者能被400整除
+var year=prompt("输入年份");
+if(year%4 == 0 && year%100 != 0 || year%400 == 0){
+	document.write(year+"是闰年");
+}else{
+	document.write(year+"是平年");
+}
+
+// 练习3：根据输入颜色，显示div不同的背景
+// div大小：200*200 大小
+// 红色：背景红色
+// 蓝色：背景蓝色
+// 粉色：背景粉色
+// 其他：无色，黑色边框
+
+// 方法一：
+ var color=prompt("输入颜色");
+ if(color == "红色"){
+ 	var DIV="<div style='background-color:red ;height:200px;width:200px';></div>"
+ 	document.write(DIV);
+ }else if(color == "蓝色"){
+ 	var DIV="<div style='background-color:blue;height:200px;width:200px' ;></div>"
+ 	document.write(DIV);
+ }else if(color == "粉色"){
+ 	var DIV="<div style='background-color:pink;height:200px;width:200px' ;></div>"
+ 	document.write(DIV);
+ }else{
+ 	var DIV="<div style='border:1px black solid;height:200px;width:200px';></div>"
+ 	document.write(DIV);
+}
+
+// 方法二：
+
+var color=prompt("输入颜色");
+	var box="<div style=background-color:"+color+";border-color:"+color+"></div>"
+    document.write(box);
+
+//  正解
+ var color=prompt("输入颜色");
+ if(color == "红色"){
+ 	document.write("<div class='box' style='background-color:red'></div>");
+ }else  if(color == "蓝色"){
+ 	document.write("<div class='box' style='background-color:blue'></div>");
+ }else{
+ 	document.write("<div class='box' style='border:1px black solid'></div>");
+ }
+
+// 练习4：
+var n=5&&4<10; // n的结果是？  true
+// 5 && true
+// true
+var n=10 || 5<6; // n的结果是？  10
+// 10 ||true
+// 10  隐式转换true，满足条件直接返回（短路）
+var n=false || (20-10)>20; // n的结果是？ false
+// false || 10>20(false)
+// false
+// 或者：只要有一个满足，结果就是成立的
+// 只要有一个true，结果就是true
+// 并且：必须都满足，结果才是成立的
+// 两个都是true结果才是true
+
+
+
+</script>	
+</body>
+</html> 

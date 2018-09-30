@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- 鼠标进入图片盒子：
+		1）遮罩层渐隐消失
+		2）链接文本
+		 从左上角旋转进入到中间位置（渐隐显示） -->
+	<style>
+		.box{
+			width: 545px;
+			height: 851px;
+			border: 1px solid black;
+			margin: 30px;
+			position: relative;
+
+		}
+		.box .mask{
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.5);
+			position: absolute;
+			left: 0;top: 0;
+			transition:all 3s; 
+
+		}
+		.box a{
+			width:140px;
+			line-height: 40px;
+			display: inline-block;
+			background:black;
+			color: white;
+			text-align: center;
+			position: absolute;
+			left: 0;top: 0;
+			/* 隐藏 */
+			opacity: 0;
+			transition:all 1s; 
+		}
+		/* 交互 */
+		.box:hover .mask{
+			opacity: 0;
+		}
+		.box:hover a{
+			opacity: 1;
+			left: 50%;margin-left: -50px;
+			top: 50%;margin-top: -50px;
+			transform:rotate(720deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div  class="mask"></div>
+		<img src="img/pic03.png">
+		
+
+			<a href="#">快来抢购吧！</a>
+		
+		
+		
+	</div>
+	
+</body>
+</html>

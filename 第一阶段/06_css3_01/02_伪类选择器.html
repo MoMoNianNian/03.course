@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		/* 偶数下标行：粉色背景; */
+		table tr:nth-child(odd){
+			background: pink;
+		}
+
+		/* 奇数下标行：浅蓝色背景*/
+		table tr:nth-child(even){
+			background: #D5EFF5;
+		}
+
+		/* 列：3的被数列；添加文字效果 */
+		table td:nth-child(3n-1){
+			color: #2A6038;
+			font-size: 20px;
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+	<table width="500px" border=1 bordercolor=red cellpadding=20 cellspacing="0">
+		<tr>
+			<td>内容文字</td>
+			<td>内容文字</td>
+			<td>内容文字</td>
+			<td>内容文字</td>
+			<td>内容文字</td>
+			<td>内容文字</td>
+		</tr>
+		<tr>
+			<td>内容文字</td>
+			<td>内容文字</td>
+			<td>内容文字</td>
+			<td>内容文字</td>
+			<td>内容文字</td>
+			<td>内容文字</td>
+		</tr>
+		<tr>
+			<td>内容文字</td>
+			<td>内容文字</td>
+			<td>内容文字</td>
+			<td>内容文字</td>
+			<td>内容文字</td>
+			<td>内容文字</td>
+		</tr>
+		<tr>
+			<td>内容文字</td>
+			<td>内容文字</td>
+			<td>内容文字</td>
+			<td>内容文字</td>
+			<td>内容文字</td>
+			<td>内容文字</td>
+		</tr>
+		<tr>
+			<td>内容文字</td>
+			<td>内容文字</td>
+			<td>内容文字</td>
+			<td>内容文字</td>
+			<td>内容文字</td>
+			<td>内容文字</td>
+		</tr>
+	</table>
+</body>
+</html>
