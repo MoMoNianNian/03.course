@@ -23,7 +23,7 @@
     2.路由功能
     3.模板功能
 
-  1）模板gongn
+  1）模板
     03_express.js
     express模板功能，需要设置视图模板引擎
     因为nodejs默认的模板引擎是jade
@@ -37,7 +37,7 @@
     模拟数据 data={stus:['jack','rose','mike','jerry']}
     编写ejs视图模板
     访问/显示 这是首页
-    访问/info 一列表形式显示每个人的姓名
+    访问/info 以列表形式显示每个人的姓名
 
 
 
