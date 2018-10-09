@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" >
+
   <title>Document</title>
   <style>
   h3{
@@ -13,32 +14,40 @@
     width:auto; 
     height:210px;
   }
-  #yes{
+  #Yes{
     position:absolute;
      left:285px; 
      top:235px; 
      width:210px; 
      height:210px;
   }
-  #no{
+  #No{
     position:absolute; 
     left:360px; 
     top:235px; 
     width:210px; 
-    height:210px;
-  }
-  </style>
+    height:210px; 
+  } 
+  </style> 
 </head>
 <body>
   <h3>慢慢吃没得打吗</h3>
-  <div id='yes'><input type="button" value='是的' onclick='f1()'></div>
-  <div id='no'><input type="button" value='不是' onmouseover='f2()'></div>
+  <div id='Yes'>
+    <input type="button" value='YES' onclick='f1()'>
+  </div>
+  <div id='No' >
+    <input type="button" value='NO' onmouseover='f2()' >
+  </div>
+  
 </body>
 <script type="text/javascript"> 
-  function f1(){ alert("Yes. you are right ") }
+  function f1(){ 
+    alert("Yes. you are right ") 
+    }
+  
   var bn=document.getElementById('no');
   console.log(bn);
   
-  function f2(){ var a=Math.floor(Math.random()*400);bn.style.top=a; bn.style.left=a } 
+  function f2(){var a=Math.floor(Math.random()*400);bn.style.top=a; bn.style.left=a} 
   </script>
 </html>
