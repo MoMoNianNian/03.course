@@ -1,26 +1,56 @@
-<html>
+<html lang="en">
 <head>
-<title>You must love me</title>
-<meta http-equiv="X-UA-Compatible" content="ie=edge" charset=utf-8" >
-<meta name="copyright" content="http://www.javascriptbank.com" >
-  </head>
-
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>You must love me</title>
+<style>
+  h3{
+    position:absolute; 
+    left:285px; 
+    top:175px; 
+    width:auto; 
+    height:210px;
+  }
+  #By{
+    position:absolute;
+     left:285px; 
+     top:235px; 
+     width:210px; 
+     height:210px;
+  }
+  #Bn{
+    position:absolute; 
+    left:360px; 
+    top:235px; 
+    width:210px; 
+    height:210px; 
+  } 
+  </style> 
+</head>
 <body>
-  <h1 style="position:absolute; left:220px; top:175px; width:auto; height:210px;">Do you love me?</h1>
-  <div id="By" style="position:absolute; left:285px; top:235px; width:210px; height:210px;">
-    <input type="button" value=" yes " onclick="f1()" >
-    </div>
-    <div id="Bn" style="position:absolute; left:360px; top:235px; width:210px; height:210px;">
-      <input type="button" value=" no " onmouseover="f2()" >
-      </div>
-      </body>
-<script type="text/javascript"> 
-function f1(){alert("Yes. you are right ")}
-
-// var flag=1;
-// function f2(){ if(flag==1) { Bn.style.top=90 ;Bn.style.left=500 ;flag=2 } else if(flag==2) { Bn.style.top=90 ;Bn.style.left=50 ;flag=3 } else if(flag==3) { Bn.style.top=235; Bn.style.left=360 ;flag=1 } }
-var bn=document.getElementById('Bn');
+  <h3>Do you love me?</h3>
+  <div id='By'>
+    <input type="button" value='YES' onclick="f1(this)">
+  </div>
+  <div id='Bn' >
+    <input type="button" value='NO'  =f2()>
+  </div>  
+</body>
+<script>
+function f1(this){
+  alert("爱我你怕了吗？");
+}
+var bn=document.getElementById("Bn");
 console.log(bn);
-function f2(){var a=Math.floor(Math.random()*400);bn.style.top=a; bn.style.left=a} 
+function f2(){
+ var a = Math.floor(Math.random()*400);
+ bn.style.top=a;
+ bn.style.left=a;
+}
+btn.onmouseover = function() {
+        alert(this.value);    //此处的this是按钮元素
+    }
+
 </script>
+
 </html>
