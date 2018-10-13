@@ -5,13 +5,14 @@ var app = express();
 app.listen(4000);
 
 app.set('view engine','ejs');
-app.get('/',function(req,res){
-  res.render("regist");
-});
 //设置请求解析方式
 app.use(bdParser.urlencoded({extended:true}));
 
 
+
+app.get('/',function(req,res){
+  res.render("regist");
+});
 
 // 处理post发送的请求
 app.post('/regist',function(req,res){

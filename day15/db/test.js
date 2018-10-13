@@ -1,12 +1,21 @@
 var db = require('./db.js');
 
-//删除数据
-var filter ={id:111};
 
-db.del("stu",filter,function(err,result){
+// db.find('stu',{age:{$lt:20}},function(){
+
+// });
+db.find('stu',{id:{$lt:102}},function(err,docs){
   console.log(err);
-  console.log(result);
+  console.log(docs);
 });
+
+// //删除数据
+// var filter ={id:111};
+
+// db.del("stu",filter,function(err,result){
+//   console.log(err);
+//   console.log(result);
+// });
 
 // //修改数据
 // var filter ={id:102};
