@@ -1,0 +1,99 @@
+今日一刻 
+  nodejs+express+angularjs（+mongodb）mean开发
+
+  public   保存公共的图片 样式 脚本
+  views    保存视图烦人
+      |
+      |--  index.ejs
+  scripts  保存自己定义的js文件
+  app.js   服务器启动文件
+
+  用到的模块：
+    express
+    ejs
+
+  1.创建服务，启动，访问localhost:4000
+    根据错误信息调整静态资源路径
+  2.引入angular与angular-route,定义app
+  3.创建yike.js,穿件模块，调用run方法
+  4.检查原文件，查看面板显示隐藏的规律
+    样式collapse决定面板显示或隐藏
+  5.修改class为navs，header，body的写法
+    将其修改为用angularjs的语法书写
+    ng-class={nav:true,collapse:isShow}
+  6.通过在$rootScope上绑定的isShow的值，来决定collapse类是否起效
+  7.给菜单按钮添加单击事件ng-click='toggle()'
+    通过单击菜单按钮，来绑定的isShow的值
+  8.导航栏文字的显示与隐藏
+    通过isShow的值判断文字是否显示，然后再遍历所有的导航栏文字
+    通过修改其样式来达到显示隐藏的效果
+  9.创建控制器模块，引入文件，将该模块加入app的依赖中
+  10.在控制器的模块里创建控制器navs
+      在其中绑定导航栏的数据，在dl标签上添加ng-controllerzhil
+      删除多余的标签，使用ng-repeat遍历navs
+  11.修复锚点出错的情况
+  12.给导航栏添加单击事件，实现4个功能
+    a header标题修改为被单击的导航标题
+    b body内容修改为被单击的视图内容
+    c 被单击导航栏标题处于选中状态，其他未选中
+    d 面板整体向左移动
+
+补充:使用nodejs向其他服务器发送请求
+
+day22
+  13.将test.ejs测试用的，替换为list.ejs
+    删除list中多余代码
+    重启服务，访问查看index能否显示list的内容
+    在index控制器中模拟绑定的数据，在list中解析，查看能否正常获取数据并解析出来
+  14.在控制器中使用$http发送请求，由服务器端(app.js)处理该请求，将响应数据返回给控制器，控制器绑定返回的数据传递给      templateUrl请求得到的list视图页面
+      发送请求 $http({'发送给app的请求地址'})
+      .then(function(result){})
+      then方法为处理服务器返回的结果，第一个表示请求成功，
+      success，第二个参数表示请求失败，error(没写)
+      result表示服务器返回的数据
+
+      服务器端app.js接收出路控制器发送的请求
+      使用request模块向豆瓣一刻服务器发送请求
+      request(url,function(err,response,body){
+
+      })
+      出错了返回err，没出错返回body
+
+      控制器的result接收结果，分析返回的结果是OK，还是NO
+      根据不同的状态处理数据
+  15.在list页面上解析数据
+  
+  16.往期内容
+    点击往期内容--》路由配置(1.发送请求获取视图 2.调用控制器)
+    1.发送请求，app.js处理请求，返回视图模版(需要ng绑定数据填坑)
+    2.调用控制器，控制器中通过$http发送请求，app.js处理请求，返回视图模版
+    返回数据，控制器在result中绑定数据
+    在视图中解析数据
+
+  17.热门作者
+    
+
+
+  display_style:
+  10001 纯文字
+  10002 纯文+图片
+  10003 纯图片
+
+  纯文字：
+          p.only
+  文字+图片
+          p
+          div.thumb
+            img
+  纯图片
+          div.gallery
+            img
+
+  这些元素的父级元素都一样的
+    li
+      span 
+      div.cont
+        h3
+        div.brief
+      
+      

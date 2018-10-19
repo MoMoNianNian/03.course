@@ -1,0 +1,24 @@
+项目结构
+  public         存放公共文件 (css,js,img)
+  script         自己定义的js脚本文件
+  upload         上传图片保存的路径
+  views          视图模板存放路径
+  app.js         服务器启动文件
+  package.json   自动生成的，配置文件
+
+1.下载需要的模块
+  express
+  ejs
+  silly-datatime
+  formidable
+ 
+ npm init
+ npm i express --save
+ cnpm install
+2.创建服务器
+
+get获取参数 req.query (有express时)
+          req.url(...)
+post获取参数：
+          有文件上传用：formidable
+          没有文件上传：body-parser
