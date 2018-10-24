@@ -31,12 +31,11 @@ JS 高级 -ECMAScript + DOM + BOM
 --与服务器通信
 1.HTTP协议
 2.Ajax
-
   -Ajax的基本概念
 1.AsynChronous JavaScript And Xml
   异步的js和xml
-  Ajax实在不刷新浏览器的情况下，浏览器异步的，悄悄的向服务器发送http请求，
-  服务器接收请求并相应数据，浏览器解析数据，页面实现局部刷新。
+  Ajax实现在不刷新浏览器的情况下，浏览器异步的，悄悄的向服务器发送http请求，
+  服务器接收请求并响应请求，浏览器解析数据，页面实现局部刷新。
 2.AJax 不是一门新的编程语言，只是一系列web技术的集合。
   HTML css JS DOM XML JSON...
   优点：用户体验好，异步通信，响应数据更快
@@ -58,8 +57,8 @@ JS 高级 -ECMAScript + DOM + BOM
       //事件处理函数
       if(xhr.readyState===4&&xhr.status===200){
         //拿到响应数据
-         5.处理数据
-          xhr.responseText：拿到响应数据
+  5.处理数据
+    xhr.responseText：拿到响应数据
       }
       两个属性 
       readyState:通信状态
@@ -104,7 +103,7 @@ JS 高级 -ECMAScript + DOM + BOM
         "歌手":["林俊杰","周杰伦","李易峰"],
         "演员":["任嘉伦","张卫健","周星驰"]
       }
-  JSON  的 API (JS)
+  JSON  的 API(JS)
     1.JSON.parse() : 将json字符串 转化为 JS 对象
     2.JSON.Stringfy():将js对象转化为 json 字符串
 

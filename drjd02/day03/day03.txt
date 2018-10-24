@@ -1,0 +1,23 @@
+template - 模板引擎
+模板引擎的原理
+1、想要匹配<%= 内容 %>我们定义正则：
+    JS中创建正则表达式：
+    var reg = /正则/g;
+    var reg = new RegExp('正则');
+2.正则的含义：
+   <%: 以<% 开始
+   =\s* :匹配 '='后面的空格
+   ([^%>]+\S):匹配所有非空个字符
+   \s*%>:匹配多个空格 以%>结尾
+   完整的匹配： reg = /<%=\s*([^%>]+\S)\s*%>/g
+
+ArtTemplate - 腾讯
+模板引擎的用法大同小异。
+用法：
+  1.导入模板插件 template-native.js
+  2.定义模板
+    <%= 内容 %> <% 逻辑 %>
+  3.读取模板，传入数据
+    var subData = template('模板的ID',数据data);
+  4.设置 HTML 页面
+    document.body.innerHTML = subData;
