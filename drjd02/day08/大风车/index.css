@@ -1,0 +1,88 @@
+.header {
+  height: 65;
+}
+.navbar .container {
+  background: #fff;
+}
+.navbar-toggle {
+  border: 1px solid #333;
+}
+.navbar-toggle .icon-bar {
+  background: #333;
+}
+/* .navbar{border-bottom:1px solid #555 } */
+.navbar-collapse {
+  font-size: 16px;
+}
+.navbar-collapse li a {
+  line-height: 47px;
+  color: #555;
+}
+.navbar-collapse li a:hover {
+  background: #52b6ec;
+  color: #fff;
+}
+.navbar-collapse li a:focus {
+  background: #52b6ec;
+  color: #fff;
+}
+.navbar-collapse .navbar-default .navbar-nav > li > a {
+  padding: 11px 20px;
+  font-size: 16px;
+  line-height: 42px;
+  color: #999;
+}
+body {
+  /* CSS reset */
+  font-family: 'Microsoft yahei';
+  margin: 0;
+  padding: 0;
+}
+#main-slider {
+  height: 831px ;
+  background: url('img/ppt_bg.jpg') no-repeat;
+  background-position: center 78px;
+}
+.carousel-inner {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.carousel-content {
+  text-align: center;
+  display: inline-block;
+}
+/* 屏幕分辨率 大于 901px */
+@media screen and (min-width: 901px) {
+  .nav-img {
+    display: inline-block;
+    background: url('img/logo.png');
+    width: 300px;
+    height: 60px;
+  }
+}
+/* 屏幕分辨率 在 900px~600px */
+@media screen and (max-width: 899px) and (min-width: 600px) {
+  .nav-img {
+    display: inline-block;
+    background: url('img/logo_min.png') no-repeat;
+    width: 120px;
+    height: 60px;
+    /* .navbar{
+    position: relative;
+    min-height:50px;
+    margin-bottom: 20px;
+    border-radius: 4px; 
+  } */
+  }
+}
+/* 屏幕分辨率 小于 901px */
+@media screen and (max-width: 599px) {
+  .nav-img {
+    display: inline-block;
+    background: url('img/logo_min.png');
+    width: 120px;
+    height: 60px;
+  }
+}

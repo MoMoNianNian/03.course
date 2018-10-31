@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  
+  /* 1.使用CSS3 transform： 
+  当使用：top: 50%;left: 50%;， 是以左上角为原点，故不处于中心位置
+ translate(-50%,-50%) 作用是，往上（x轴）,左（y轴）移动自身长宽的 50%，以使其居于中心位置 /*
+ .father{
+    display: relative;}
+  .son{
+    transform:translate(-50%,-50%);position:absolute; top:50%;left: 50%;
+    
+  } */
+  /* 2.使用CSS方法： */
+   .father{
+     width: 800px;
+     height: 800px;
+    text-align: center;
+    vertical-align: middle;
+    display:table-cell;
+  }
+  .son{
+    vertical-align: middle; 
+    display:inline-block;
+    
+  } 
+  </style>
+</head>
+<body>
+  <div class='father'>
+  <div class="son">fbtgntymjk</div>
+</div>
+ 
+
+<p>position几个属性的作用？
+        position的常见四个属性值： relative，absolute，fixed，static。一般都要配合"left"、"top"、"right" 以及 "bottom" 属性使用。
+    1.绝对定位 position:relative 相对于自己本身定位 占位置 离家留坑
+    2.相对定位  position:absolute 相对于父容器定位，父容器设置了position值为relative/absolute，
+              如果没有父盒子，就相对于body进行定位 不占位置
+    3.固定定位 position:fixed 相对于浏览器窗口定位 随着滚动定在屏幕上 不占位置
+    4.static：默认位置，设置为 static 的元素，它始终会处于页面流给予的位置（static 元素会忽略任何 top、bottom、left 或 right 声明）
+  </p>   
+  <p>px，em，rem的区别？
+      px像素（Pixel）。相对长度单位。像素px是相对于显示器屏幕分辨率而言的。
+        PX特点
+        -1. IE无法调整那些使用px作为单位的字体大小；
+        -2. 国外的大部分网站能够调整的原因在于其使用了em或rem作为字体单位；
+        -3. Firefox能够调整px和em，rem，但是有大部分的国产浏览器使用IE内核。
+      em是相对长度单位。相对于当前对象内文本的字体尺寸。如当前对行内文本的字体尺寸未被人为设置，则相对于浏览器的默认字体尺寸。
+      (任意浏览器的默认字体高都是16px。所有未经调整的浏览器都符合: 1em=16px。那么12px=0.75em,10px=0.625em。为了简化font-size的换算，需要在css中的body选择器中声明Font-size=62.5%，这就使em值变为 16px*62.5%=10px, 这样12px=1.2em, 10px=1em, 也就是说只需要将你的原来的px数值除以10，然后换上em作为单位就行了。)
+        EM特点
+        -1. em的值并不是固定的； 
+        -2. em会继承父级元素的字体大小。
+      
+      rem特点
+        rem是CSS3新增的一个相对单位（root em，根em），这个单位引起了广泛关注。这个单位与em有什么区别呢？区别在于使用rem为元素设定字体大小时，仍然是相对大小，但相对的只是HTML根元素。这个单位可谓集相对大小和绝对大小的优点于一身，通过它既可以做到只修改根元素就成比例地调整所有字体大小，又可以避免字体大小逐层复合的连锁反应。目前，除了IE8及更早版本外，所有浏览器均已支持rem。对于不支持它的浏览器，应对方法也很简单，就是多写一个绝对单位的声明。这些浏览器会忽略用rem设定的字体大小。
+        p {font-size:14px; font-size:.875rem;}
+
+  </p>
+  
+</body>
+</html>
