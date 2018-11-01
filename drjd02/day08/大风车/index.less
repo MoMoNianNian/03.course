@@ -1,66 +1,112 @@
-@size:16px;
-.header{
-  height: 65;
-
-}
-.navbar .container{
-  background: #fff;
-}
-.navbar-toggle{
-  border: 1px solid #333;
-}
-.navbar-toggle .icon-bar{
-  background: #333;
-}
-
-
-/* .navbar{border-bottom:1px solid #555 } */
-.navbar-collapse{
-  font-size:@size;
-  li{
-    a{
-      line-height: 47px;
-      color: #555; 
-      &:hover{
-        background: #52b6ec;
-        color: #fff; 
-      }
-      &:focus{
-        background: #52b6ec;
-        color: #fff; 
-      }
-    }
-  }
-  .navbar-default .navbar-nav > li > a {
-    padding: 11px 20px;
-    font-size: 16px;
-    line-height: 42px;
-    color: #999;
-}
-}
+/* 公共样式 */ 
 body{
-  /* CSS reset */
   font-family: 'Microsoft yahei';
   margin: 0;
   padding: 0;
 }
+/* CSS reset */
+@size:16px;
+/* 头部导航栏 */
+.header{
+  display: inline-block; 
+  width: 100%; 
+  height: 78px;
+  position: fixed;
+  top:0;
+  left:0;
+  z-index: 99999;
+  border:1px solid #CCC;
+  background:#fff;
+  .navbar div.container{  
+    background: #fff;
+    .navbar-header .navbar-toggle{
+      border: 1px solid #333;
+    .icon-bar{
+      background: #333;
+              }
+                                  }
+    .navbar-collapse{
+      font-size:@size;
+      li{
+        a{
+          line-height: 47px;
+          color: #555; 
+          &:hover{
+            background: #52b6ec;
+            color: #fff; 
+          }
+          &:focus{
+            background: #52b6ec;
+            color: #fff; 
+          }
+        }
+      }
+    
+    .navbar-default .navbar-nav > li > a {
+        padding: 11px 20px;
+        font-size: 16px;
+        line-height: 42px;
+        color: #999;
+    }
+    }
+  }
+}
 
+/* 轮播图 */
 #main-slider{
   height:831px ;
   background: url('./img/ppt_bg.jpg') no-repeat;
   background-position: center 78px;
+  
+  .carousel-inner{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  .container{
+    width: 970px;
+    padding:0 15px 0 92px;
+    margin:173px auto 0 auto;
+    .carousel-content{
+      text-align: center;
+      display: inline-block;
+      z-index:99999 ;
+      .title{
+        font-size: 40px;
+        text-align: center;
+        color: #fff;
+        height: 178px;
+      }
+      }
+      .btns{
+        display: inline-block;
+        width: 70px;
+        height: 60px;
+        /* border:1px solid blue; */
+        position: absolute;
+        top: 50%;
+        margin-top: -30px;
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 60px;
+        color: white;
+        background: rgba(0,0,0,0.5);
+        z-index: 5;
+        .prev{
+          position: absolute;
+          left:10px;
+        }
+        .next{
+          position: absolute;
+          right:10px;
+        }
+      }
+  }
+  
 }
-.carousel-inner{
-  display: inline-block;
-  position: relative;
-  width: 100%;
-  overflow: hidden;
 
-}
-.carousel-content{
-  text-align: center;
-  display: inline-block;
-}
+/* 响应式 */
 /* 屏幕分辨率 大于 901px */
 @media screen and (min-width:901px) {
   .nav-img{
@@ -69,6 +115,7 @@ body{
     width: 300px;height: 60px;
   }
 }
+
 /* 屏幕分辨率 在 900px~600px */
 @media screen and (max-width:899px) and (min-width:600px) {
   .nav-img{
@@ -83,6 +130,7 @@ body{
   } */
   }
 }
+
 /* 屏幕分辨率 小于 901px */
 @media screen and (max-width:599px) {
   .nav-img{

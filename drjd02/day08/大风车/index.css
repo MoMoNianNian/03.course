@@ -1,58 +1,100 @@
-.header {
-  height: 65;
+/* 公共样式 */
+body {
+  font-family: 'Microsoft yahei';
+  margin: 0;
+  padding: 0;
 }
-.navbar .container {
+/* CSS reset */
+/* 头部导航栏 */
+.header {
+  display: inline-block;
+  width: 100%;
+  height: 78px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  border: 1px solid #CCC;
   background: #fff;
 }
-.navbar-toggle {
+.header .navbar div.container {
+  background: #fff;
+}
+.header .navbar div.container .navbar-header .navbar-toggle {
   border: 1px solid #333;
 }
-.navbar-toggle .icon-bar {
+.header .navbar div.container .navbar-header .navbar-toggle .icon-bar {
   background: #333;
 }
-/* .navbar{border-bottom:1px solid #555 } */
-.navbar-collapse {
+.header .navbar div.container .navbar-collapse {
   font-size: 16px;
 }
-.navbar-collapse li a {
+.header .navbar div.container .navbar-collapse li a {
   line-height: 47px;
   color: #555;
 }
-.navbar-collapse li a:hover {
+.header .navbar div.container .navbar-collapse li a:hover {
   background: #52b6ec;
   color: #fff;
 }
-.navbar-collapse li a:focus {
+.header .navbar div.container .navbar-collapse li a:focus {
   background: #52b6ec;
   color: #fff;
 }
-.navbar-collapse .navbar-default .navbar-nav > li > a {
+.header .navbar div.container .navbar-collapse .navbar-default .navbar-nav > li > a {
   padding: 11px 20px;
   font-size: 16px;
   line-height: 42px;
   color: #999;
 }
-body {
-  /* CSS reset */
-  font-family: 'Microsoft yahei';
-  margin: 0;
-  padding: 0;
-}
+/* 轮播图 */
 #main-slider {
   height: 831px ;
   background: url('img/ppt_bg.jpg') no-repeat;
   background-position: center 78px;
 }
-.carousel-inner {
-  display: inline-block;
-  position: relative;
-  width: 100%;
-  overflow: hidden;
+#main-slider .container {
+  width: 970px;
+  padding: 0 15px 0 92px;
+  margin: 173px auto 0 auto;
 }
-.carousel-content {
+#main-slider .container .carousel-content {
   text-align: center;
   display: inline-block;
+  z-index: 99999 ;
 }
+#main-slider .container .carousel-content .title {
+  font-size: 40px;
+  text-align: center;
+  color: #fff;
+  height: 178px;
+}
+#main-slider .container .btns span.prev,
+#main-slider .container .btns span.next {
+  display: block;
+  width: 70px;
+  height: 60px;
+  /* border:1px solid blue; */
+  position: absolute;
+  top: 50%;
+  margin-top: -30px;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 60px;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+}
+#main-slider .container .btns span.prev .prev,
+#main-slider .container .btns span.next .prev {
+  left: 10px;
+}
+#main-slider .container .btns span.prev .next,
+#main-slider .container .btns span.next .next {
+  right: 10px;
+}
+/* 响应式 */
 /* 屏幕分辨率 大于 901px */
 @media screen and (min-width: 901px) {
   .nav-img {
