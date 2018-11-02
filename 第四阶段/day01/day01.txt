@@ -30,13 +30,15 @@ ES6-day01
   2.ES5/6中数组的API
     1.forEach() ES5
     2.find()
-    3.findIndex() ES5
-    4.map()
-    5.includes()
+    3.findIndex() 
+    4.map() ES5  循环遍历
+    5.includes()  代替 indexOf 返回一个布尔值
 
 5、ES6 中的对象的API
   1.ES6中允许把声明的变量直接赋值给变量
   2.对象的API
+    Object.is() 两个对象的比较 返布尔值
+    Object.assign() 进行对象的合并
   
 
 
